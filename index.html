@@ -36,10 +36,15 @@
 
       background-color: #09052c;
 
+      /*
+        Meditation background image
+        Make sure meditation-bg.png is
+        in the same folder as index.html
+      */
       background-image:
         linear-gradient(
-          rgba(5, 3, 35, 0.30),
-          rgba(5, 3, 35, 0.30)
+          rgba(5, 3, 35, 0.12),
+          rgba(5, 3, 35, 0.12)
         ),
         url("meditation-bg.png");
 
@@ -56,9 +61,9 @@
         fixed;
     }
 
-    /* ---------------------------------
+    /* =================================
        MAIN PAGE
-    --------------------------------- */
+    ================================= */
 
     .page {
       min-height: 100vh;
@@ -71,9 +76,9 @@
       margin: 0 auto;
     }
 
-    /* ---------------------------------
+    /* =================================
        HEADER
-    --------------------------------- */
+    ================================= */
 
     .hero {
       text-align: center;
@@ -82,18 +87,28 @@
 
     .hero h1 {
       color: #ffffff;
-      font-size: clamp(42px, 7vw, 78px);
+
+      font-size:
+        clamp(42px, 7vw, 78px);
+
       font-weight: 700;
+
       letter-spacing: 2px;
+
       text-shadow:
         0 3px 12px rgba(0, 0, 0, 0.55);
+
       margin-bottom: 10px;
     }
 
     .hero-subtitle {
       color: #ffffff;
-      font-size: clamp(15px, 2vw, 21px);
+
+      font-size:
+        clamp(15px, 2vw, 21px);
+
       letter-spacing: 3px;
+
       text-shadow:
         0 2px 8px rgba(0, 0, 0, 0.6);
     }
@@ -101,47 +116,69 @@
     .hero-line {
       width: 100px;
       height: 3px;
+
       margin: 18px auto 0;
+
       border-radius: 50px;
+
       background: #ffffff;
+
       opacity: 0.85;
     }
 
-    /* ---------------------------------
-       WELCOME
-    --------------------------------- */
+    /* =================================
+       WELCOME BOX
+    ================================= */
 
     .welcome-box {
       width: 100%;
       max-width: 900px;
+
       margin: 0 auto 28px;
 
       padding: 25px 30px;
 
       border-radius: 22px;
 
+      /*
+        More transparent so the meditation
+        image/logo can be seen behind it.
+      */
       background:
-        rgba(255, 255, 255, 0.90);
+        rgba(255, 255, 255, 0.68);
 
       box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.25);
+        0 10px 35px rgba(0, 0, 0, 0.20);
 
       text-align: center;
 
       backdrop-filter:
-        blur(8px);
+        blur(5px);
+
+      -webkit-backdrop-filter:
+        blur(5px);
     }
 
     .welcome-box h2 {
       color: #075c59;
+
       font-size: 28px;
+
       margin-bottom: 12px;
+
+      text-shadow:
+        0 1px 2px rgba(255,255,255,0.55);
     }
 
     .welcome-box p {
       color: #315f5d;
+
       font-size: 16px;
+
       line-height: 1.7;
+
+      text-shadow:
+        0 1px 2px rgba(255,255,255,0.45);
     }
 
     .peace-text {
@@ -149,32 +186,42 @@
 
       font-weight: bold;
 
-      color: #7b4b9b;
+      color: #70448f;
+
+      text-shadow:
+        0 1px 2px rgba(255,255,255,0.5);
     }
 
-    /* ---------------------------------
+    /* =================================
        CALENDAR SECTION
-    --------------------------------- */
+    ================================= */
 
     .calendar-box {
+      /*
+        More transparent than before.
+      */
       background:
-        rgba(255, 255, 255, 0.94);
+        rgba(255, 255, 255, 0.76);
 
       border-radius: 24px;
 
       padding: 28px;
 
       box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.28);
+        0 15px 45px rgba(0, 0, 0, 0.22);
 
       backdrop-filter:
-        blur(10px);
+        blur(6px);
+
+      -webkit-backdrop-filter:
+        blur(6px);
     }
 
     .calendar-header {
       display: flex;
 
       justify-content: space-between;
+
       align-items: center;
 
       gap: 15px;
@@ -186,27 +233,36 @@
 
     .calendar-title {
       color: #075c59;
+
       font-size: 30px;
+
       font-weight: bold;
+
+      text-shadow:
+        0 1px 2px rgba(255,255,255,0.45);
     }
 
     .calendar-status {
       font-size: 14px;
+
       color: #52716f;
     }
 
-    /* ---------------------------------
-       ACTION BUTTONS
-    --------------------------------- */
+    /* =================================
+       BUTTONS
+    ================================= */
 
     .button-row {
       display: flex;
+
       gap: 10px;
+
       flex-wrap: wrap;
     }
 
     button {
       border: none;
+
       cursor: pointer;
 
       font-family: inherit;
@@ -218,161 +274,266 @@
     }
 
     button:hover {
-      transform: translateY(-1px);
+      transform:
+        translateY(-1px);
     }
 
     button:active {
-      transform: translateY(0);
+      transform:
+        translateY(0);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+
+      opacity: 0.65;
+
+      transform: none;
     }
 
     .btn {
-      padding: 11px 18px;
+      padding:
+        11px 18px;
 
-      border-radius: 12px;
+      border-radius:
+        12px;
 
-      font-size: 14px;
-      font-weight: bold;
+      font-size:
+        14px;
+
+      font-weight:
+        bold;
     }
 
     .btn-primary {
-      color: white;
-      background: #167b76;
+      color:
+        white;
+
+      background:
+        #167b76;
 
       box-shadow:
-        0 5px 15px rgba(22, 123, 118, 0.25);
+        0 5px 15px
+        rgba(22, 123, 118, 0.25);
     }
 
     .btn-primary:hover {
-      background: #106b67;
+      background:
+        #106b67;
     }
 
     .btn-secondary {
-      color: #075c59;
-      background: #dff2ef;
+      color:
+        #075c59;
+
+      background:
+        rgba(223, 242, 239, 0.88);
     }
 
     .btn-edit {
-      color: #5d3974;
-      background: #eee1f4;
+      color:
+        #5d3974;
+
+      background:
+        rgba(238, 225, 244, 0.88);
     }
 
     .btn-delete {
-      color: #9a3434;
-      background: #f9dddd;
+      color:
+        #9a3434;
+
+      background:
+        rgba(249, 221, 221, 0.88);
     }
 
     .btn-direction {
-      color: #ffffff;
-      background: #66539b;
+      color:
+        #ffffff;
+
+      background:
+        #66539b;
     }
 
     .btn-small {
-      padding: 8px 12px;
-      font-size: 13px;
+      padding:
+        8px 12px;
+
+      font-size:
+        13px;
     }
 
-    /* ---------------------------------
+    /* =================================
+       ERROR MESSAGE
+    ================================= */
+
+    .error-message {
+      display:
+        none;
+
+      margin-bottom:
+        20px;
+
+      padding:
+        15px 18px;
+
+      border-radius:
+        12px;
+
+      background:
+        rgba(253, 232, 232, 0.90);
+
+      color:
+        #9b3030;
+
+      line-height:
+        1.5;
+    }
+
+    /* =================================
        CALENDAR
-    --------------------------------- */
+    ================================= */
 
     .calendar-grid {
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
         repeat(7, 1fr);
 
-      gap: 10px;
+      gap:
+        10px;
 
-      margin-bottom: 30px;
+      margin-bottom:
+        30px;
     }
 
     .weekday {
-      text-align: center;
+      text-align:
+        center;
 
-      font-weight: bold;
+      font-weight:
+        bold;
 
-      color: #567270;
+      color:
+        #567270;
 
-      font-size: 13px;
+      font-size:
+        13px;
 
-      padding: 5px;
+      padding:
+        5px;
     }
 
     .day {
-      min-height: 90px;
+      min-height:
+        90px;
 
       border:
-        1px solid #d8e9e7;
+        1px solid
+        rgba(216, 233, 231, 0.85);
 
-      border-radius: 15px;
+      border-radius:
+        15px;
 
+      /*
+        Slightly transparent day boxes.
+      */
       background:
-        rgba(247, 252, 251, 0.95);
+        rgba(247, 252, 251, 0.70);
 
-      padding: 10px;
+      padding:
+        10px;
 
-      cursor: pointer;
+      cursor:
+        pointer;
 
       transition:
         all 0.2s ease;
+
+      backdrop-filter:
+        blur(3px);
+
+      -webkit-backdrop-filter:
+        blur(3px);
     }
 
     .day:hover {
-      border-color: #76aaa5;
+      border-color:
+        #76aaa5;
 
       transform:
         translateY(-2px);
 
       box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.08);
+        0 5px 15px
+        rgba(0, 0, 0, 0.08);
     }
 
     .day.empty {
       background:
-        rgba(238, 245, 244, 0.6);
+        rgba(238, 245, 244, 0.40);
 
-      cursor: default;
+      cursor:
+        default;
     }
 
     .day.empty:hover {
-      transform: none;
-      box-shadow: none;
+      transform:
+        none;
+
+      box-shadow:
+        none;
     }
 
     .day-number {
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
-      justify-content: center;
+      align-items:
+        center;
 
-      width: 30px;
-      height: 30px;
+      justify-content:
+        center;
 
-      border-radius: 50%;
+      width:
+        30px;
 
-      font-weight: bold;
+      height:
+        30px;
 
-      color: #075c59;
+      border-radius:
+        50%;
 
-      margin-bottom: 6px;
+      font-weight:
+        bold;
+
+      color:
+        #075c59;
+
+      margin-bottom:
+        6px;
     }
 
     .day.selected {
       border:
-        2px solid #167b76;
+        2px solid
+        #167b76;
 
       background:
-        #e8f6f3;
+        rgba(232, 246, 243, 0.78);
     }
 
     .day.selected .day-number {
-      color: white;
-      background: #167b76;
+      color:
+        white;
+
+      background:
+        #167b76;
     }
 
     .day.has-session {
       background:
-        #fff8e8;
+        rgba(255, 248, 232, 0.78);
 
       border-color:
         #e7c96d;
@@ -382,361 +543,496 @@
       background:
         #d9a934;
 
-      color: white;
+      color:
+        white;
     }
 
     .day-session-count {
-      color: #866315;
-      font-size: 11px;
-      line-height: 1.3;
+      color:
+        #866315;
+
+      font-size:
+        11px;
+
+      line-height:
+        1.3;
     }
 
-    /* ---------------------------------
+    /* =================================
        SELECTED DATE
-    --------------------------------- */
+    ================================= */
 
     .selected-section {
       border-top:
-        1px solid #d9e7e5;
+        1px solid
+        rgba(217, 231, 229, 0.8);
 
-      padding-top: 25px;
+      padding-top:
+        25px;
     }
 
     .selected-title {
-      color: #075c59;
-      font-size: 24px;
-      margin-bottom: 15px;
+      color:
+        #075c59;
+
+      font-size:
+        24px;
+
+      margin-bottom:
+        15px;
     }
 
     .sessions-list {
-      display: grid;
-      gap: 15px;
+      display:
+        grid;
+
+      gap:
+        15px;
     }
 
     .session-card {
-      display: flex;
+      display:
+        flex;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 20px;
+      gap:
+        20px;
 
-      padding: 20px;
+      padding:
+        20px;
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
+      /*
+        Transparent session boxes too.
+      */
       background:
-        #f8fcfb;
+        rgba(248, 252, 251, 0.72);
 
       border:
-        1px solid #d8e9e7;
+        1px solid
+        rgba(216, 233, 231, 0.85);
+
+      backdrop-filter:
+        blur(4px);
+
+      -webkit-backdrop-filter:
+        blur(4px);
     }
 
     .session-info {
-      flex: 1;
+      flex:
+        1;
     }
 
     .session-time {
-      color: #075c59;
-      font-size: 21px;
-      font-weight: bold;
-      margin-bottom: 6px;
+      color:
+        #075c59;
+
+      font-size:
+        21px;
+
+      font-weight:
+        bold;
+
+      margin-bottom:
+        6px;
     }
 
     .session-location {
-      color: #526c6a;
-      font-size: 15px;
-      line-height: 1.5;
+      color:
+        #526c6a;
+
+      font-size:
+        15px;
+
+      line-height:
+        1.5;
     }
 
     .session-actions {
-      display: flex;
+      display:
+        flex;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      gap: 8px;
+      gap:
+        8px;
 
-      justify-content: flex-end;
+      justify-content:
+        flex-end;
     }
 
     .no-sessions {
-      padding: 30px;
+      padding:
+        30px;
 
-      text-align: center;
+      text-align:
+        center;
 
-      border-radius: 16px;
+      border-radius:
+        16px;
 
       background:
-        #f3f8f7;
+        rgba(243, 248, 247, 0.72);
 
-      color: #607875;
+      color:
+        #607875;
 
-      line-height: 1.6;
+      line-height:
+        1.6;
+
+      backdrop-filter:
+        blur(4px);
+
+      -webkit-backdrop-filter:
+        blur(4px);
     }
 
-    /* ---------------------------------
+    /* =================================
        LOADING
-    --------------------------------- */
+    ================================= */
 
     .loading {
-      text-align: center;
+      text-align:
+        center;
 
-      padding: 35px;
+      padding:
+        35px;
 
-      color: #52716f;
+      color:
+        #52716f;
     }
 
-    .error-message {
-      display: none;
-
-      margin-bottom: 20px;
-
-      padding: 15px 18px;
-
-      border-radius: 12px;
-
-      background: #fde8e8;
-
-      color: #9b3030;
-
-      line-height: 1.5;
-    }
-
-    /* ---------------------------------
+    /* =================================
        MODAL
-    --------------------------------- */
+    ================================= */
 
     .modal-overlay {
-      display: none;
+      display:
+        none;
 
-      position: fixed;
+      position:
+        fixed;
 
-      z-index: 1000;
+      z-index:
+        1000;
 
-      inset: 0;
+      inset:
+        0;
 
       background:
         rgba(0, 0, 0, 0.65);
 
-      padding: 20px;
+      padding:
+        20px;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: center;
+      justify-content:
+        center;
     }
 
     .modal-overlay.show {
-      display: flex;
+      display:
+        flex;
     }
 
     .modal {
-      width: 100%;
-      max-width: 460px;
+      width:
+        100%;
 
-      max-height: 90vh;
+      max-width:
+        460px;
 
-      overflow-y: auto;
+      max-height:
+        90vh;
 
-      background: white;
+      overflow-y:
+        auto;
 
-      border-radius: 22px;
+      background:
+        #ffffff;
 
-      padding: 28px;
+      border-radius:
+        22px;
+
+      padding:
+        28px;
 
       box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.35);
+        0 20px 60px
+        rgba(0, 0, 0, 0.35);
     }
 
     .modal h2 {
-      color: #075c59;
+      color:
+        #075c59;
 
-      font-size: 26px;
+      font-size:
+        26px;
 
-      margin-bottom: 8px;
+      margin-bottom:
+        8px;
     }
 
     .modal-description {
-      color: #607875;
+      color:
+        #607875;
 
-      font-size: 14px;
+      font-size:
+        14px;
 
-      line-height: 1.5;
+      line-height:
+        1.5;
 
-      margin-bottom: 20px;
+      margin-bottom:
+        20px;
     }
 
     .form-group {
-      margin-bottom: 16px;
+      margin-bottom:
+        16px;
     }
 
     .form-group label {
-      display: block;
+      display:
+        block;
 
-      margin-bottom: 7px;
+      margin-bottom:
+        7px;
 
-      color: #315f5d;
+      color:
+        #315f5d;
 
-      font-weight: bold;
+      font-weight:
+        bold;
 
-      font-size: 14px;
+      font-size:
+        14px;
     }
 
     .form-group input {
-      width: 100%;
+      width:
+        100%;
 
-      padding: 12px 14px;
+      padding:
+        12px 14px;
 
       border:
-        1px solid #cbdedb;
+        1px solid
+        #cbdedb;
 
-      border-radius: 11px;
+      border-radius:
+        11px;
 
-      outline: none;
+      outline:
+        none;
 
-      font-family: inherit;
+      font-family:
+        inherit;
 
-      font-size: 15px;
+      font-size:
+        15px;
 
-      color: #234b49;
+      color:
+        #234b49;
 
-      background: #fbfdfd;
+      background:
+        #fbfdfd;
     }
 
     .form-group input:focus {
-      border-color: #167b76;
+      border-color:
+        #167b76;
 
       box-shadow:
-        0 0 0 3px rgba(22, 123, 118, 0.10);
+        0 0 0 3px
+        rgba(22, 123, 118, 0.10);
     }
 
     .modal-buttons {
-      display: flex;
+      display:
+        flex;
 
-      gap: 10px;
+      gap:
+        10px;
 
-      justify-content: flex-end;
+      justify-content:
+        flex-end;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      margin-top: 20px;
+      margin-top:
+        20px;
     }
 
     .auth-switch {
-      margin-top: 16px;
+      margin-top:
+        16px;
 
-      text-align: center;
+      text-align:
+        center;
 
-      color: #607875;
+      color:
+        #607875;
 
-      font-size: 14px;
+      font-size:
+        14px;
     }
 
     .auth-switch button {
-      background: none;
+      background:
+        none;
 
-      color: #167b76;
+      color:
+        #167b76;
 
-      font-weight: bold;
+      font-weight:
+        bold;
 
-      padding: 0;
+      padding:
+        0;
 
-      text-decoration: underline;
+      text-decoration:
+        underline;
     }
 
     .auth-message {
-      display: none;
+      display:
+        none;
 
-      margin-bottom: 15px;
+      margin-bottom:
+        15px;
 
-      padding: 12px;
+      padding:
+        12px;
 
-      border-radius: 10px;
+      border-radius:
+        10px;
 
-      font-size: 14px;
+      font-size:
+        14px;
 
-      line-height: 1.5;
+      line-height:
+        1.5;
     }
 
     .auth-message.error {
-      display: block;
+      display:
+        block;
 
-      background: #fde8e8;
+      background:
+        #fde8e8;
 
-      color: #9b3030;
+      color:
+        #9b3030;
     }
 
     .auth-message.success {
-      display: block;
+      display:
+        block;
 
-      background: #e5f6ee;
+      background:
+        #e5f6ee;
 
-      color: #26714e;
+      color:
+        #26714e;
     }
 
-    /* ---------------------------------
+    /* =================================
        USER AREA
-    --------------------------------- */
+    ================================= */
 
     .user-bar {
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: center;
+      justify-content:
+        center;
 
-      gap: 10px;
+      gap:
+        10px;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      margin-top: 18px;
+      margin-top:
+        18px;
 
-      color: white;
+      color:
+        white;
 
-      font-size: 14px;
+      font-size:
+        14px;
 
       text-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.5);
+        0 2px 6px
+        rgba(0, 0, 0, 0.5);
     }
 
     .user-email {
-      font-weight: bold;
+      font-weight:
+        bold;
     }
 
     .logout-btn {
-      padding: 7px 13px;
+      padding:
+        7px 13px;
 
-      border-radius: 9px;
+      border-radius:
+        9px;
 
-      color: #075c59;
+      color:
+        #075c59;
 
-      background: white;
+      background:
+        white;
 
-      font-weight: bold;
+      font-weight:
+        bold;
 
-      font-size: 12px;
+      font-size:
+        12px;
     }
 
-    /* ---------------------------------
+    /* =================================
        FOOTER
-    --------------------------------- */
+    ================================= */
 
     .footer {
-      text-align: center;
+      text-align:
+        center;
 
-      color: white;
+      color:
+        white;
 
-      padding: 30px 10px 10px;
+      padding:
+        30px 10px 10px;
 
-      font-size: 13px;
+      font-size:
+        13px;
 
       text-shadow:
-        0 2px 7px rgba(0, 0, 0, 0.65);
+        0 2px 7px
+        rgba(0, 0, 0, 0.65);
     }
 
-    /* ---------------------------------
+    /* =================================
        MOBILE
-    --------------------------------- */
+    ================================= */
 
     @media (max-width: 750px) {
 
@@ -751,95 +1047,130 @@
       }
 
       .hero h1 {
-        font-size: 46px;
+        font-size:
+          46px;
       }
 
       .hero-subtitle {
-        font-size: 13px;
-        letter-spacing: 2px;
+        font-size:
+          13px;
+
+        letter-spacing:
+          2px;
       }
 
       .welcome-box {
-        padding: 20px 18px;
+        padding:
+          20px 18px;
       }
 
       .calendar-box {
-        padding: 17px;
-        border-radius: 18px;
+        padding:
+          17px;
+
+        border-radius:
+          18px;
       }
 
       .calendar-header {
-        align-items: flex-start;
+        align-items:
+          flex-start;
       }
 
       .calendar-title {
-        font-size: 24px;
+        font-size:
+          24px;
       }
 
       .calendar-grid {
-        gap: 5px;
+        gap:
+          5px;
       }
 
       .weekday {
-        font-size: 10px;
+        font-size:
+          10px;
       }
 
       .day {
-        min-height: 65px;
-        padding: 5px;
-        border-radius: 10px;
+        min-height:
+          65px;
+
+        padding:
+          5px;
+
+        border-radius:
+          10px;
       }
 
       .day-number {
-        width: 25px;
-        height: 25px;
-        font-size: 12px;
+        width:
+          25px;
+
+        height:
+          25px;
+
+        font-size:
+          12px;
       }
 
       .day-session-count {
-        font-size: 8px;
+        font-size:
+          8px;
       }
 
       .session-card {
-        flex-direction: column;
+        flex-direction:
+          column;
 
-        align-items: stretch;
+        align-items:
+          stretch;
       }
 
       .session-actions {
-        justify-content: flex-start;
+        justify-content:
+          flex-start;
       }
 
       .modal {
-        padding: 22px;
+        padding:
+          22px;
       }
     }
 
     @media (max-width: 430px) {
 
       .hero h1 {
-        font-size: 39px;
+        font-size:
+          39px;
       }
 
       .calendar-grid {
-        gap: 3px;
+        gap:
+          3px;
       }
 
       .day {
-        min-height: 58px;
+        min-height:
+          58px;
       }
 
       .day-number {
-        width: 22px;
-        height: 22px;
+        width:
+          22px;
+
+        height:
+          22px;
       }
 
       .btn {
-        width: 100%;
+        width:
+          100%;
       }
 
       .button-row {
-        width: 100%;
+        width:
+          100%;
       }
     }
   </style>
@@ -870,6 +1201,7 @@
           class="user-bar"
           style="display:none;"
         >
+
           <span>
             Signed in as
             <span
@@ -884,6 +1216,7 @@
           >
             Sign Out
           </button>
+
         </div>
 
       </header>
@@ -895,13 +1228,15 @@
 
       <section class="welcome-box">
 
-        <h2>Welcome to Meditation</h2>
+        <h2>
+          Welcome to Meditation
+        </h2>
 
         <p>
-          Take a moment to pause, breathe, relax,
-          and reconnect with your inner peace.
-          Use the calendar below to see upcoming
-          meditation sessions.
+          Take a moment to pause, breathe,
+          relax, and reconnect with your
+          inner peace. Use the calendar below
+          to see upcoming meditation sessions.
         </p>
 
         <div class="peace-text">
@@ -922,6 +1257,7 @@
         <div class="calendar-header">
 
           <div>
+
             <div class="calendar-title">
               Meditation Calendar
             </div>
@@ -932,6 +1268,7 @@
             >
               Loading sessions...
             </div>
+
           </div>
 
           <div class="button-row">
@@ -954,8 +1291,6 @@
         ></div>
 
 
-        <!-- Calendar -->
-
         <div id="calendarArea">
 
           <div class="loading">
@@ -964,8 +1299,6 @@
 
         </div>
 
-
-        <!-- Selected Date -->
 
         <div
           id="selectedSection"
@@ -1018,8 +1351,8 @@
         id="authDescription"
         class="modal-description"
       >
-        Please sign in to add or edit meditation
-        sessions.
+        Please sign in to add or edit
+        meditation sessions.
       </p>
 
       <div
@@ -1126,8 +1459,8 @@
       </h2>
 
       <p class="modal-description">
-        Add the date, meditation time, and
-        location for the session.
+        Add the date, meditation time,
+        and location for the session.
       </p>
 
       <div
@@ -1326,11 +1659,6 @@
 
             updateUserBar();
 
-            /*
-             * If the user has successfully signed in,
-             * close the auth modal.
-             */
-
             if (
               event === "SIGNED_IN"
             ) {
@@ -1435,8 +1763,8 @@
               <br><br>
               Please make sure the
               <strong>meditation_sessions</strong>
-              table exists in Supabase and is exposed
-              through the Data API.
+              table exists in Supabase and is
+              exposed through the Data API.
             </div>
           `;
 
@@ -1474,11 +1802,6 @@
 
       renderCalendar();
 
-
-      /*
-       * Select today's date if it has a session.
-       * Otherwise select the first available date.
-       */
 
       if (sessions.length > 0) {
 
@@ -1642,10 +1965,6 @@
       );
 
 
-      /*
-       * Empty cells before first day
-       */
-
       for (
         let i = 0;
         i < firstDay.getDay();
@@ -1658,10 +1977,6 @@
 
       }
 
-
-      /*
-       * Days of month
-       */
 
       for (
         let dayNumber = 1;
@@ -2008,10 +2323,6 @@
 
     async function openAddSession() {
 
-      /*
-       * Editing requires authentication.
-       */
-
       if (!currentSession) {
 
         openAuthModal(
@@ -2050,11 +2361,6 @@
       ).className =
         "auth-message";
 
-
-      /*
-       * If a date is already selected,
-       * use that date automatically.
-       */
 
       if (selectedDate) {
 
@@ -2723,12 +3029,6 @@
         authMode === "signup"
       ) {
 
-        /*
-         * Depending on the Supabase email-confirmation
-         * setting, the user may need to click an email
-         * before the session becomes active.
-         */
-
         if (
           result.data.session
         ) {
@@ -3009,8 +3309,10 @@
       value
     ) {
 
-      if (value === null ||
-          value === undefined) {
+      if (
+        value === null ||
+        value === undefined
+      ) {
 
         return "";
 
@@ -3043,7 +3345,7 @@
 
 
     /* =====================================
-       CLOSE MODALS WHEN CLICKING OUTSIDE
+       CLOSE MODALS OUTSIDE
     ====================================== */
 
     document
@@ -3053,8 +3355,7 @@
         function (event) {
 
           if (
-            event.target ===
-            this
+            event.target === this
           ) {
 
             closeAuthModal();
@@ -3072,8 +3373,7 @@
         function (event) {
 
           if (
-            event.target ===
-            this
+            event.target === this
           ) {
 
             closeSessionModal();
@@ -3093,8 +3393,7 @@
       function (event) {
 
         if (
-          event.key ===
-          "Escape"
+          event.key === "Escape"
         ) {
 
           closeAuthModal();
