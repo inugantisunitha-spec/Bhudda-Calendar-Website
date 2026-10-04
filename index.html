@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -10,1689 +8,1925 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Meditation Session</title>
+  <title>Bhudda CEO | Meditation Session</title>
 
-  <meta
-    name="description"
-    content="Join our peaceful meditation sessions."
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
+  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+  <style>
 
-<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* =========================================
-   BASIC
-========================================= */
+    body {
+      font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+      color: #075c59;
 
-html {
-  scroll-behavior: smooth;
-}
+      min-height: 100vh;
 
-body {
-  font-family: "DM Sans", sans-serif;
-  color: #274c45;
-  background: #f4faf7;
-}
+      background:
+        linear-gradient(
+          rgba(255,255,255,0.18),
+          rgba(255,255,255,0.18)
+        ),
+        url("meditation-bg.jpg")
+        center top / cover fixed no-repeat;
+    }
 
+    /* --------------------------------
+       MAIN PAGE
+    -------------------------------- */
 
-/* =========================================
-   HERO
-========================================= */
+    .page {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 18px 40px;
+    }
 
-.hero {
+    /* --------------------------------
+       HERO
+    -------------------------------- */
 
-  min-height: 470px;
+    .hero {
+      text-align: center;
+      color: #075c59;
+      padding: 15px 10px 25px;
+    }
 
-  display: flex;
+    .lotus {
+      font-size: 48px;
+      margin-bottom: 2px;
+    }
 
-  align-items: center;
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1;
+      font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
 
-  justify-content: center;
+      font-weight: 600;
 
-  text-align: center;
+      text-shadow:
+        0 2px 2px rgba(255,255,255,0.7);
+    }
 
-  padding: 70px 20px;
+    .tagline {
+      margin-top: 8px;
 
-  position: relative;
+      font-size: clamp(17px, 2.5vw, 25px);
 
-  background:
-    linear-gradient(
-      rgba(15, 72, 65, 0.60),
-      rgba(15, 72, 65, 0.65)
-    ),
-    url("meditation-bg.jpg");
+      font-weight: 600;
 
-  background-size: cover;
+      letter-spacing: 1px;
+    }
 
-  background-position: center;
+    .tagline span {
+      margin: 0 8px;
+      color: #62bd7d;
+    }
 
-  color: white;
+    /* --------------------------------
+       WELCOME BOX
+    -------------------------------- */
 
-}
+    .welcome {
+      max-width: 680px;
 
+      margin: 5px auto 35px;
 
-.hero-content {
+      padding: 28px 35px;
 
-  max-width: 700px;
+      background:
+        rgba(255,255,255,0.82);
 
-}
+      border-radius: 30px;
 
+      box-shadow:
+        0 10px 35px rgba(0,0,0,0.12);
 
-.small-title {
+      text-align: left;
 
-  font-size: 13px;
+      backdrop-filter: blur(4px);
+    }
 
-  letter-spacing: 4px;
+    .welcome h2 {
+      font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
 
-  text-transform: uppercase;
+      font-size: 32px;
 
-  margin-bottom: 18px;
+      margin-bottom: 12px;
+    }
 
-  opacity: 0.9;
+    .welcome p {
+      font-size: 18px;
 
-}
+      line-height: 1.55;
 
+      margin-bottom: 12px;
+    }
 
-.hero h1 {
+    .welcome .join {
+      text-align: center;
 
-  font-family: "Cormorant Garamond", serif;
+      font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
 
-  font-size: clamp(60px, 10vw, 100px);
+      font-size: 28px;
 
-  line-height: 0.9;
+      margin-top: 16px;
+    }
 
-  margin-bottom: 25px;
+    .heart-line {
+      text-align: center;
 
-}
+      font-size: 24px;
 
+      margin-top: 5px;
+    }
 
-.hero h1 span {
+    /* --------------------------------
+       CALENDAR CONTAINER
+    -------------------------------- */
 
-  color: #ffe39c;
+    .calendar-box {
+      background:
+        rgba(255,255,255,0.94);
 
-}
+      border-radius: 28px;
 
+      padding: 25px;
 
-.hero p {
+      box-shadow:
+        0 15px 45px rgba(0,0,0,0.15);
 
-  font-size: 17px;
+      border:
+        1px solid rgba(255,255,255,0.8);
+    }
 
-  line-height: 1.8;
+    .calendar-header {
+      display: flex;
 
-  max-width: 600px;
+      align-items: center;
 
-  margin: auto;
+      justify-content: space-between;
 
-  color: rgba(255,255,255,0.92);
+      gap: 15px;
 
-}
+      margin-bottom: 20px;
+    }
 
+    .calendar-title {
+      display: flex;
 
-/* =========================================
-   CALENDAR SECTION
-========================================= */
+      align-items: center;
 
-.calendar-section {
+      gap: 14px;
+    }
 
-  width: min(1000px, 92%);
+    .calendar-icon {
+      font-size: 48px;
+    }
 
-  margin: auto;
+    .calendar-title h2 {
+      font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
 
-  padding: 70px 0 100px;
+      font-size: 34px;
+    }
 
-}
+    .calendar-title p {
+      font-size: 16px;
 
+      margin-top: 2px;
+    }
 
-.section-title {
+    .community {
+      background:
+        linear-gradient(
+          135deg,
+          #e5faf0,
+          #f0fcf7
+        );
 
-  text-align: center;
+      border:
+        1px solid #bcebdd;
 
-  margin-bottom: 35px;
+      padding: 12px 20px;
 
-}
+      border-radius: 22px;
 
+      font-weight: bold;
 
-.section-title h2 {
+      text-align: center;
 
-  font-family: "Cormorant Garamond", serif;
+      white-space: nowrap;
+    }
 
-  font-size: 55px;
+    .community small {
+      display: block;
 
-  color: #28594f;
+      font-weight: normal;
 
-}
+      margin-top: 3px;
+    }
 
+    /* --------------------------------
+       DATE CARDS
+    -------------------------------- */
 
-.section-title p {
+    .date-row {
+      display: grid;
 
-  color: #71857d;
+      grid-template-columns:
+        repeat(4, 1fr);
 
-  margin-top: 8px;
+      gap: 15px;
 
-}
+      margin-bottom: 22px;
+    }
 
+    .date-card {
+      border: none;
 
-/* =========================================
-   CALENDAR HEADER
-========================================= */
+      min-height: 100px;
 
-.calendar-header {
+      border-radius: 18px;
 
-  display: flex;
+      cursor: pointer;
 
-  align-items: center;
+      padding: 12px;
 
-  justify-content: space-between;
+      color: #064e5a;
 
-  margin-bottom: 18px;
+      background:
+        linear-gradient(
+          135deg,
+          #e5f5e9,
+          #d8f0e1
+        );
 
-}
+      transition:
+        transform .2s,
+        box-shadow .2s;
 
+      font-family: inherit;
+    }
 
-.month-title {
+    .date-card:nth-child(2) {
+      background:
+        linear-gradient(
+          135deg,
+          #e8f3fc,
+          #dcecfb
+        );
+    }
 
-  font-family: "Cormorant Garamond", serif;
+    .date-card:nth-child(3) {
+      background:
+        linear-gradient(
+          135deg,
+          #f1edfc,
+          #e9e3fa
+        );
+    }
 
-  font-size: 35px;
+    .date-card:nth-child(4) {
+      background:
+        linear-gradient(
+          135deg,
+          #fff5dc,
+          #ffedc9
+        );
+    }
 
-  font-weight: 700;
+    .date-card:hover {
+      transform: translateY(-3px);
 
-}
+      box-shadow:
+        0 7px 18px rgba(0,0,0,0.10);
+    }
 
+    .date-card.active {
+      border:
+        3px solid #087c67;
 
-.month-buttons {
+      box-shadow:
+        0 5px 15px rgba(0,0,0,0.10);
+    }
 
-  display: flex;
+    .date-day {
+      font-weight: bold;
 
-  gap: 8px;
+      font-size: 15px;
+    }
 
-}
+    .date-number {
+      font-size: 23px;
 
+      font-weight: bold;
 
-.month-btn {
+      margin: 7px 0 3px;
+    }
 
-  width: 40px;
+    .date-year {
+      font-size: 14px;
+    }
 
-  height: 40px;
+    /* --------------------------------
+       ADD BUTTON
+    -------------------------------- */
 
-  border-radius: 50%;
+    .add-button-area {
+      display: flex;
 
-  border: 1px solid #c9ddd5;
+      justify-content: flex-end;
 
-  background: white;
+      margin-top: -5px;
 
-  color: #28665b;
+      margin-bottom: 20px;
+    }
 
-  font-size: 22px;
+    .btn {
+      border: none;
 
-  cursor: pointer;
+      cursor: pointer;
 
-}
+      border-radius: 15px;
 
+      padding: 13px 23px;
 
-.month-btn:hover {
+      font-family: inherit;
 
-  background: #eaf5ef;
+      font-size: 16px;
 
-}
+      font-weight: bold;
 
+      transition: .2s;
+    }
 
-/* =========================================
-   CALENDAR
-========================================= */
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-.calendar {
+    .btn-green {
+      background:
+        linear-gradient(
+          135deg,
+          #28a878,
+          #0d856c
+        );
 
-  background: white;
+      color: white;
 
-  border-radius: 24px;
+      box-shadow:
+        0 5px 12px rgba(13,133,108,.25);
+    }
 
-  overflow: hidden;
+    .btn-light {
+      background: #effaf6;
 
-  border: 1px solid #d8e8e1;
+      color: #08645d;
 
-  box-shadow:
-    0 20px 50px
-    rgba(38, 83, 71, 0.10);
+      border:
+        1px solid #bce8dc;
+    }
 
-}
+    .btn-danger {
+      background: #fff0ef;
 
+      color: #b4473e;
+    }
 
-.weekdays {
+    /* --------------------------------
+       SESSION CARD
+    -------------------------------- */
 
-  display: grid;
+    .session-card {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(248,255,253,.98),
+          rgba(239,249,246,.98)
+        );
 
-  grid-template-columns: repeat(7, 1fr);
+      border:
+        1px solid #c9eee4;
 
-  background: #edf7f2;
+      border-radius: 25px;
 
-}
+      overflow: hidden;
 
+      margin-bottom: 20px;
+    }
 
-.weekday {
+    .session-heading {
+      display: flex;
 
-  text-align: center;
+      justify-content: space-between;
 
-  padding: 13px 4px;
+      align-items: center;
 
-  font-size: 11px;
+      gap: 10px;
 
-  font-weight: 700;
+      padding: 20px 25px;
 
-  color: #668078;
+      border-bottom:
+        1px solid #dceeea;
+    }
 
-  text-transform: uppercase;
+    .session-heading h3 {
+      font-size: 24px;
+    }
 
-}
+    .week-badge {
+      background: #b9edbf;
 
+      color: #075c59;
 
-.calendar-grid {
+      padding: 8px 17px;
 
-  display: grid;
+      border-radius: 20px;
 
-  grid-template-columns: repeat(7, 1fr);
+      font-weight: bold;
+    }
 
-}
+    .session-row {
+      display: flex;
 
+      align-items: center;
 
-.day {
+      gap: 18px;
 
-  min-height: 105px;
+      padding: 21px 25px;
 
-  padding: 9px;
+      border-bottom:
+        1px solid #e0efec;
+    }
 
-  border-right: 1px solid #e3eee9;
+    .session-icon {
+      width: 48px;
+      height: 48px;
 
-  border-bottom: 1px solid #e3eee9;
+      min-width: 48px;
 
-}
+      border-radius: 50%;
 
+      background: #e8f7f2;
 
-.day:nth-child(7n) {
+      display: flex;
 
-  border-right: none;
+      align-items: center;
 
-}
+      justify-content: center;
 
+      font-size: 25px;
+    }
 
-.day-number {
+    .session-info {
+      flex: 1;
+    }
 
-  width: 30px;
+    .session-info strong {
+      display: block;
 
-  height: 30px;
+      font-size: 17px;
 
-  display: flex;
+      margin-bottom: 5px;
+    }
 
-  align-items: center;
+    .session-info span {
+      font-size: 17px;
 
-  justify-content: center;
+      line-height: 1.4;
+    }
 
-  margin-bottom: 5px;
+    .edit-button {
+      border:
+        1px solid #bce7dc;
 
-  font-size: 13px;
+      background: #f5fcfa;
 
-  font-weight: 700;
+      color: #08665f;
 
-}
+      border-radius: 15px;
 
+      padding: 11px 17px;
 
-.today .day-number {
+      cursor: pointer;
 
-  background: #28665b;
+      font-family: inherit;
 
-  color: white;
+      font-weight: bold;
+    }
 
-  border-radius: 50%;
+    .edit-button:hover {
+      background: #e7f7f2;
+    }
 
-}
+    .directions {
+      display: inline-block;
 
+      margin-top: 8px;
 
-.other-month {
+      color: #07856d;
 
-  background: #fafcfb;
+      font-weight: bold;
 
-}
+      text-decoration: underline;
+    }
 
+    .session-note {
+      margin: 0 20px 20px;
 
-.other-month .day-number {
+      padding: 14px 18px;
 
-  color: #bdc9c5;
+      background: #e8f6f1;
 
-}
+      border-radius: 22px;
 
+      font-style: italic;
 
-/* =========================================
-   SESSION ON CALENDAR
-========================================= */
+      line-height: 1.5;
+    }
 
-.session-event {
+    /* --------------------------------
+       EMPTY / LOADING
+    -------------------------------- */
 
-  background: #5e9d8d;
+    .message {
+      text-align: center;
 
-  color: white;
+      padding: 40px 20px;
 
-  border-radius: 9px;
+      color: #41716d;
 
-  padding: 6px;
+      font-size: 17px;
+    }
 
-  font-size: 10px;
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
 
-  cursor: pointer;
+    .bottom-message {
+      text-align: center;
 
-  margin-bottom: 4px;
+      color: #075c59;
 
-}
+      padding: 35px 10px 10px;
 
+      font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
 
-.session-event strong {
+      font-size: 24px;
 
-  display: block;
+      line-height: 1.35;
+    }
 
-}
+    .bottom-lotus {
+      font-size: 35px;
 
+      margin-top: 8px;
+    }
 
-/* =========================================
-   UPCOMING SESSIONS
-========================================= */
+    /* --------------------------------
+       LOGIN MODAL
+    -------------------------------- */
 
-.upcoming {
+    .modal {
+      position: fixed;
 
-  margin-top: 40px;
+      inset: 0;
 
-}
+      background:
+        rgba(0,50,45,.48);
 
+      display: none;
 
-.upcoming h3 {
+      align-items: center;
 
-  font-family: "Cormorant Garamond", serif;
+      justify-content: center;
 
-  font-size: 38px;
+      padding: 20px;
 
-  margin-bottom: 18px;
+      z-index: 1000;
 
-}
+      backdrop-filter: blur(4px);
+    }
 
+    .modal.show {
+      display: flex;
+    }
 
-.session-list {
+    .modal-box {
+      width: 100%;
 
-  display: grid;
+      max-width: 430px;
 
-  grid-template-columns:
-    repeat(2, 1fr);
+      background: white;
 
-  gap: 16px;
+      border-radius: 25px;
 
-}
+      padding: 30px;
 
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
 
-.session-card {
+      position: relative;
+    }
 
-  background: white;
+    .close {
+      position: absolute;
 
-  border: 1px solid #dceae4;
+      right: 18px;
 
-  border-radius: 20px;
+      top: 13px;
 
-  padding: 22px;
+      border: none;
 
-}
+      background: none;
 
+      font-size: 30px;
 
-.session-date {
+      cursor: pointer;
 
-  color: #659688;
+      color: #557;
+    }
 
-  font-size: 12px;
+    .modal-box h2 {
+      color: #075c59;
 
-  text-transform: uppercase;
+      margin-bottom: 8px;
+    }
 
-  letter-spacing: 1px;
+    .modal-box p {
+      color: #567;
 
-  font-weight: 700;
+      margin-bottom: 20px;
 
-  margin-bottom: 7px;
+      line-height: 1.4;
+    }
 
-}
+    .input {
+      width: 100%;
 
+      padding: 13px 14px;
 
-.session-card h4 {
+      margin-bottom: 12px;
 
-  font-family: "Cormorant Garamond", serif;
+      border:
+        1px solid #c8ded9;
 
-  font-size: 29px;
+      border-radius: 12px;
 
-  margin-bottom: 10px;
+      font-size: 16px;
 
-}
+      outline: none;
+    }
 
+    .input:focus {
+      border-color: #168b78;
 
-.session-info {
+      box-shadow:
+        0 0 0 3px rgba(22,139,120,.10);
+    }
 
-  color: #667b73;
+    .modal-actions {
+      display: flex;
 
-  font-size: 14px;
+      gap: 10px;
 
-  line-height: 1.8;
+      margin-top: 5px;
+    }
 
-}
+    .modal-actions button {
+      flex: 1;
+    }
 
+    .switch-auth {
+      border: none;
 
-.maps-button {
+      background: none;
 
-  display: inline-block;
+      color: #087b69;
 
-  margin-top: 13px;
+      cursor: pointer;
 
-  padding: 9px 15px;
+      font-weight: bold;
 
-  border-radius: 30px;
+      margin-top: 15px;
+    }
 
-  background: #28665b;
+    .auth-message {
+      margin-top: 12px;
 
-  color: white;
+      font-size: 14px;
 
-  text-decoration: none;
+      color: #087b69;
+    }
 
-  font-size: 12px;
+    /* --------------------------------
+       EDIT MODAL
+    -------------------------------- */
 
-}
+    .edit-modal {
+      display: none;
+    }
 
+    .edit-modal.show {
+      display: flex;
+    }
 
-.maps-button:hover {
+    /* --------------------------------
+       RESPONSIVE
+    -------------------------------- */
 
-  background: #1c5047;
+    @media (max-width: 800px) {
 
-}
+      .calendar-header {
+        flex-direction: column;
 
+        align-items: flex-start;
+      }
 
-/* =========================================
-   LOGIN
-========================================= */
+      .community {
+        width: 100%;
+      }
 
-.login-section {
+      .date-row {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
 
-  width: min(600px, 92%);
+      .session-heading {
+        align-items: flex-start;
 
-  margin: 0 auto 80px;
+        flex-direction: column;
+      }
 
-}
+    }
 
+    @media (max-width: 600px) {
 
-.login-card {
+      .page {
+        padding: 12px 10px 30px;
+      }
 
-  background: white;
+      .welcome {
+        padding: 22px;
 
-  border: 1px solid #dceae4;
+        border-radius: 22px;
+      }
 
-  border-radius: 22px;
+      .welcome h2 {
+        font-size: 27px;
+      }
 
-  padding: 28px;
+      .welcome p {
+        font-size: 16px;
+      }
 
-  box-shadow:
-    0 15px 40px
-    rgba(42, 81, 70, 0.08);
+      .calendar-box {
+        padding: 15px;
 
-}
+        border-radius: 22px;
+      }
 
+      .calendar-title h2 {
+        font-size: 28px;
+      }
 
-.login-card h3 {
+      .date-row {
+        gap: 9px;
+      }
 
-  font-family: "Cormorant Garamond", serif;
+      .date-card {
+        min-height: 88px;
+      }
 
-  font-size: 35px;
+      .session-row {
+        padding: 17px 15px;
 
-  margin-bottom: 7px;
+        flex-wrap: wrap;
+      }
 
-}
+      .edit-button {
+        margin-left: 66px;
 
+        width: calc(100% - 66px);
+      }
 
-.login-card p {
+      .session-info span {
+        font-size: 15px;
+      }
 
-  color: #72837d;
+      .add-button-area {
+        justify-content: stretch;
+      }
 
-  font-size: 14px;
+      .add-button-area .btn {
+        width: 100%;
+      }
 
-  margin-bottom: 20px;
+    }
 
-}
-
-
-input {
-
-  width: 100%;
-
-  padding: 13px;
-
-  margin-bottom: 12px;
-
-  border: 1px solid #cdded8;
-
-  border-radius: 10px;
-
-  outline: none;
-
-}
-
-
-input:focus {
-
-  border-color: #5c9889;
-
-}
-
-
-button {
-
-  font-family: inherit;
-
-}
-
-
-.main-button {
-
-  border: none;
-
-  background: #28665b;
-
-  color: white;
-
-  border-radius: 30px;
-
-  padding: 12px 20px;
-
-  cursor: pointer;
-
-  font-weight: 600;
-
-  margin-right: 6px;
-
-}
-
-
-.secondary-button {
-
-  border: none;
-
-  background: #f2dfaa;
-
-  color: #31564f;
-
-  border-radius: 30px;
-
-  padding: 12px 20px;
-
-  cursor: pointer;
-
-  font-weight: 600;
-
-}
-
-
-#authStatus {
-
-  margin-bottom: 15px;
-
-  color: #54746b;
-
-  font-size: 14px;
-
-}
-
-
-#message {
-
-  margin-top: 15px;
-
-  font-size: 14px;
-
-}
-
-
-.success {
-
-  color: #28704f;
-
-}
-
-
-.error {
-
-  color: #a33f3f;
-
-}
-
-
-/* =========================================
-   ADD SESSION
-========================================= */
-
-.add-session {
-
-  display: none;
-
-  margin-top: 20px;
-
-  padding-top: 20px;
-
-  border-top: 1px solid #e0ebe6;
-
-}
-
-
-.add-session.active {
-
-  display: block;
-
-}
-
-
-.add-session label {
-
-  display: block;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  margin-bottom: 5px;
-
-}
-
-
-.add-session input {
-
-  margin-bottom: 13px;
-
-}
-
-
-.logout {
-
-  background: #edf5f1;
-
-  color: #315d54;
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-  .hero {
-
-    min-height: 430px;
-
-  }
-
-
-  .hero h1 {
-
-    font-size: 65px;
-
-  }
-
-
-  .hero p {
-
-    font-size: 15px;
-
-  }
-
-
-  .calendar-section {
-
-    padding-top: 50px;
-
-  }
-
-
-  .section-title h2 {
-
-    font-size: 45px;
-
-  }
-
-
-  .day {
-
-    min-height: 75px;
-
-    padding: 5px;
-
-  }
-
-
-  .day-number {
-
-    width: 25px;
-
-    height: 25px;
-
-    font-size: 11px;
-
-  }
-
-
-  .session-event {
-
-    font-size: 8px;
-
-    padding: 4px;
-
-  }
-
-
-  .session-event span {
-
-    display: none;
-
-  }
-
-
-  .weekday {
-
-    font-size: 8px;
-
-  }
-
-
-  .session-list {
-
-    grid-template-columns: 1fr;
-
-  }
-
-}
-
-</style>
-
+  </style>
 </head>
-
 
 <body>
 
+<div class="page">
 
-<!-- =========================================
-     SIMPLE INTRO
-========================================= -->
+  <!-- ==============================
+       HERO
+  =============================== -->
 
-<section class="hero">
+  <header class="hero">
 
-  <div class="hero-content">
+    <div class="lotus">🪷</div>
 
-    <div class="small-title">
-      Peace • Positive Energy • Mindfulness
+    <h1>Bhudda CEO</h1>
+
+    <div class="tagline">
+      Peace
+      <span>♥</span>
+      Balance
+      <span>♥</span>
+      Positive Energy
     </div>
 
-    <h1>
-      Meditation<br>
-      <span>Session</span>
-    </h1>
-
-    <p>
-      Come together in a peaceful space to relax,
-      meditate, gather positive energy, and create
-      a calm and peaceful mind.
-    </p>
-
-  </div>
-
-</section>
+  </header>
 
 
+  <!-- ==============================
+       WELCOME
+  =============================== -->
 
-<!-- =========================================
-     CALENDAR
-========================================= -->
-
-<section class="calendar-section">
-
-  <div class="section-title">
+  <section class="welcome">
 
     <h2>
-      Meditation Calendar
+      Hi Master, have a wonderful day! 🙏
     </h2>
 
     <p>
-      Select a date to see the meditation time and location.
+      Please come and join our Meditation Session,
+      where we can gather positive energy,
+      inner strength, and a peaceful mind.
+      🧘✨
     </p>
-
-  </div>
-
-
-  <div class="calendar-header">
-
-    <div
-      class="month-title"
-      id="monthTitle"
-    >
-      Loading...
-    </div>
-
-
-    <div class="month-buttons">
-
-      <button
-        class="month-btn"
-        id="previousMonth"
-      >
-        ‹
-      </button>
-
-      <button
-        class="month-btn"
-        id="nextMonth"
-      >
-        ›
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="calendar">
-
-    <div class="weekdays">
-
-      <div class="weekday">Sun</div>
-      <div class="weekday">Mon</div>
-      <div class="weekday">Tue</div>
-      <div class="weekday">Wed</div>
-      <div class="weekday">Thu</div>
-      <div class="weekday">Fri</div>
-      <div class="weekday">Sat</div>
-
-    </div>
-
-
-    <div
-      class="calendar-grid"
-      id="calendarGrid"
-    ></div>
-
-  </div>
-
-
-
-  <!-- UPCOMING -->
-
-  <div class="upcoming">
-
-    <h3>
-      Upcoming Meditation
-    </h3>
-
-    <div
-      class="session-list"
-      id="sessionList"
-    >
-
-      Loading...
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================
-     LOGIN / ADD
-========================================= -->
-
-<section class="login-section">
-
-  <div class="login-card">
-
-    <h3>
-      Add Meditation Session
-    </h3>
 
     <p>
-      Sign in to add or update a meditation date,
-      time, and location.
+      Let's take some time to relax, meditate,
+      and recharge ourselves with peace and positivity.
     </p>
 
+    <div class="join">
+      We would love to have you join us!
+    </div>
 
-    <div id="authStatus">
-      You are not signed in.
+    <div class="heart-line">
+      ───── ♥ ─────
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       CALENDAR
+  =============================== -->
+
+  <main class="calendar-box">
+
+    <div class="calendar-header">
+
+      <div class="calendar-title">
+
+        <div class="calendar-icon">
+          🗓️
+        </div>
+
+        <div>
+
+          <h2>
+            Meditation Calendar
+          </h2>
+
+          <p>
+            Click on a date to view details,
+            add or edit location & time.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="community">
+
+        👥 Community Calendar
+
+        <small>
+          Everyone can view
+        </small>
+
+      </div>
+
     </div>
 
 
-    <!-- LOGIN -->
+    <!-- DATE CARDS -->
 
-    <div id="loginArea">
+    <div
+      class="date-row"
+      id="dateRow"
+    ></div>
 
-      <input
-        type="email"
-        id="email"
-        placeholder="Email"
-      >
 
-      <input
-        type="password"
-        id="password"
-        placeholder="Password"
-      >
+    <!-- ADD BUTTON -->
 
+    <div class="add-button-area">
 
       <button
-        class="main-button"
-        id="signIn"
+        class="btn btn-green"
+        onclick="startAddSession()"
+      >
+        ＋ Add Session
+      </button>
+
+    </div>
+
+
+    <!-- SESSION -->
+
+    <div id="sessionContainer">
+
+      <div class="message">
+        Loading meditation sessions...
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ==============================
+       BOTTOM MESSAGE
+  =============================== -->
+
+  <div class="bottom-message">
+
+    Together we meditate<br>
+
+    for a healthier mind, a happier heart,<br>
+
+    and a brighter tomorrow.
+
+    <div class="bottom-lotus">
+      🪷
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ==================================================
+     AUTH MODAL
+================================================== -->
+
+<div
+  class="modal"
+  id="authModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeAuth()"
+    >
+      ×
+    </button>
+
+    <h2 id="authTitle">
+      Sign In
+    </h2>
+
+    <p id="authDescription">
+      Sign in to add or edit a meditation session.
+    </p>
+
+
+    <input
+      class="input"
+      id="authEmail"
+      type="email"
+      placeholder="Email"
+      autocomplete="email"
+    >
+
+
+    <input
+      class="input"
+      id="authPassword"
+      type="password"
+      placeholder="Password"
+      autocomplete="current-password"
+    >
+
+
+    <div class="modal-actions">
+
+      <button
+        class="btn btn-green"
+        id="authButton"
+        onclick="submitAuth()"
       >
         Sign In
       </button>
 
-
-      <button
-        class="secondary-button"
-        id="signUp"
-      >
-        Create Account
-      </button>
-
     </div>
 
 
-    <!-- LOGGED IN -->
+    <button
+      class="switch-auth"
+      id="switchAuthButton"
+      onclick="switchAuthMode()"
+    >
+      Create a new account
+    </button>
+
 
     <div
-      id="loggedInArea"
-      style="display:none;"
-    >
-
-      <button
-        class="main-button"
-        id="showAdd"
-      >
-        + Add Session
-      </button>
-
-
-      <button
-        class="main-button logout"
-        id="signOut"
-      >
-        Sign Out
-      </button>
-
-
-      <!-- ADD SESSION FORM -->
-
-      <div
-        class="add-session"
-        id="addSession"
-      >
-
-        <label>
-          Date
-        </label>
-
-        <input
-          type="date"
-          id="sessionDate"
-        >
-
-
-        <label>
-          Time
-        </label>
-
-        <input
-          type="time"
-          id="sessionTime"
-        >
-
-
-        <label>
-          Location
-        </label>
-
-        <input
-          type="text"
-          id="sessionLocation"
-          placeholder="Enter location or address"
-        >
-
-
-        <button
-          class="main-button"
-          id="saveSession"
-        >
-          Save Session
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div id="message"></div>
+      class="auth-message"
+      id="authMessage"
+    ></div>
 
   </div>
 
-</section>
+</div>
 
+
+<!-- ==================================================
+     EDIT MODAL
+================================================== -->
+
+<div
+  class="modal edit-modal"
+  id="editModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeEditModal()"
+    >
+      ×
+    </button>
+
+    <h2 id="editTitle">
+      Edit Session
+    </h2>
+
+    <p>
+      Update the meditation time or location.
+    </p>
+
+
+    <label>
+      Date
+    </label>
+
+    <input
+      class="input"
+      id="editDate"
+      type="date"
+    >
+
+
+    <label>
+      Time
+    </label>
+
+    <input
+      class="input"
+      id="editTime"
+      type="text"
+      placeholder="7:00 PM - 8:00 PM"
+    >
+
+
+    <label>
+      Location
+    </label>
+
+    <input
+      class="input"
+      id="editLocation"
+      type="text"
+      placeholder="Enter location or address"
+    >
+
+
+    <div class="modal-actions">
+
+      <button
+        class="btn btn-green"
+        onclick="saveEdit()"
+      >
+        💾 Save
+      </button>
+
+      <button
+        class="btn btn-danger"
+        onclick="deleteSession()"
+      >
+        Delete
+      </button>
+
+    </div>
+
+    <div
+      class="auth-message"
+      id="editMessage"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- ==================================================
+     ADD SESSION MODAL
+================================================== -->
+
+<div
+  class="modal edit-modal"
+  id="addModal"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeAddModal()"
+    >
+      ×
+    </button>
+
+    <h2>
+      Add Meditation Session
+    </h2>
+
+    <p>
+      Add a new date, time, and location.
+    </p>
+
+
+    <label>
+      Date
+    </label>
+
+    <input
+      class="input"
+      id="addDate"
+      type="date"
+    >
+
+
+    <label>
+      Time
+    </label>
+
+    <input
+      class="input"
+      id="addTime"
+      type="text"
+      placeholder="7:00 PM - 8:00 PM"
+    >
+
+
+    <label>
+      Location
+    </label>
+
+    <input
+      class="input"
+      id="addLocation"
+      type="text"
+      placeholder="Enter location or address"
+    >
+
+
+    <div class="modal-actions">
+
+      <button
+        class="btn btn-green"
+        onclick="saveNewSession()"
+      >
+        ＋ Add Session
+      </button>
+
+    </div>
+
+
+    <div
+      class="auth-message"
+      id="addMessage"
+    ></div>
+
+  </div>
+
+</div>
 
 
 <script>
 
-/* =========================================
-   SUPABASE
-========================================= */
+  /* ==================================================
+     SUPABASE
+  ================================================== */
 
-const SUPABASE_URL =
-  "https://lhdkhhvegkmyuxfbjcjt.supabase.co";
+  const SUPABASE_URL =
+    "https://lhdkhhvegkmyuxfbjcjt.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_Wv5DL38hnKV342zdLtXLmA_67W5_lV4";
 
 
-const SUPABASE_KEY =
-  "sb_publishable_Wv5DL38hnKV342zdLtXLmA_67W5_lV4";
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY,
+      {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: true
+        }
+      }
+    );
 
 
-const supabaseClient =
-  window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
+  /* ==================================================
+     VARIABLES
+  ================================================== */
+
+  let currentSession = null;
+
+  let allSessions = [];
+
+  let selectedDate = null;
+
+  let editingSessionId = null;
+
+  let authMode = "signin";
+
+
+  /* ==================================================
+     START
+  ================================================== */
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+      initializePage();
+
+    }
   );
 
 
-/* =========================================
-   VARIABLES
-========================================= */
+  async function initializePage() {
 
-let currentUser = null;
+    /*
+      First load the calendar.
 
-let sessions = [];
+      IMPORTANT:
+      The calendar is public.
+      Nobody needs to sign in to see it.
+    */
 
-let calendarDate = new Date();
-
-
-/* =========================================
-   ELEMENTS
-========================================= */
-
-const calendarGrid =
-  document.getElementById("calendarGrid");
-
-const monthTitle =
-  document.getElementById("monthTitle");
-
-const sessionList =
-  document.getElementById("sessionList");
-
-const authStatus =
-  document.getElementById("authStatus");
-
-const loginArea =
-  document.getElementById("loginArea");
-
-const loggedInArea =
-  document.getElementById("loggedInArea");
-
-const addSession =
-  document.getElementById("addSession");
-
-const message =
-  document.getElementById("message");
-
-
-/* =========================================
-   START
-========================================= */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  async () => {
+    await loadCurrentUser();
 
     await loadSessions();
 
-    await checkUser();
-
   }
-);
 
 
-/* =========================================
-   LOAD SESSIONS
-========================================= */
+  /* ==================================================
+     GET CURRENT USER
+  ================================================== */
 
-async function loadSessions() {
+  async function loadCurrentUser() {
 
-  const {
-    data,
-    error
-  } = await supabaseClient
-    .from("meditation_sessions")
-    .select("*")
-    .order(
-      "session_date",
-      {
-        ascending: true
-      }
-    );
-
-
-  if (error) {
-
-    console.error(
-      "Supabase error:",
+    const {
+      data,
       error
-    );
+    } =
+      await supabaseClient.auth.getSession();
 
 
-    sessionList.innerHTML = `
-      <div class="session-card">
-        <h4>Calendar unavailable</h4>
-        <div class="session-info">
-          ${escapeHTML(error.message)}
+    if (error) {
+
+      console.error(
+        "Session error:",
+        error
+      );
+
+      currentSession = null;
+
+      return;
+    }
+
+
+    currentSession =
+      data.session;
+
+  }
+
+
+  /* ==================================================
+     AUTH LISTENER
+  ================================================== */
+
+  supabaseClient.auth.onAuthStateChange(
+    (event, session) => {
+
+      console.log(
+        "Authentication:",
+        event
+      );
+
+      currentSession =
+        session;
+
+    }
+  );
+
+
+  /* ==================================================
+     LOAD SESSIONS
+  ================================================== */
+
+  async function loadSessions() {
+
+    const container =
+      document.getElementById(
+        "sessionContainer"
+      );
+
+
+    container.innerHTML =
+      `
+        <div class="message">
+          Loading meditation sessions...
         </div>
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  sessions = data || [];
-
-
-  renderCalendar();
-
-  renderSessions();
-
-}
-
-
-/* =========================================
-   RENDER CALENDAR
-========================================= */
-
-function renderCalendar() {
-
-  const year =
-    calendarDate.getFullYear();
-
-  const month =
-    calendarDate.getMonth();
-
-
-  monthTitle.textContent =
-    calendarDate.toLocaleString(
-      "default",
-      {
-        month: "long",
-        year: "numeric"
-      }
-    );
-
-
-  calendarGrid.innerHTML = "";
-
-
-  const firstDay =
-    new Date(
-      year,
-      month,
-      1
-    ).getDay();
-
-
-  const daysInMonth =
-    new Date(
-      year,
-      month + 1,
-      0
-    ).getDate();
-
-
-  const total =
-    Math.ceil(
-      (firstDay + daysInMonth) / 7
-    ) * 7;
-
-
-  const today =
-    new Date();
-
-
-  for (
-    let i = 0;
-    i < total;
-    i++
-  ) {
-
-    const day =
-      document.createElement("div");
-
-    day.className = "day";
-
-
-    let date;
-
-
-    if (i < firstDay) {
-
-      const number =
-        new Date(
-          year,
-          month,
-          0
-        ).getDate()
-        -
-        firstDay
-        +
-        i
-        +
-        1;
-
-
-      date =
-        new Date(
-          year,
-          month - 1,
-          number
-        );
-
-
-      day.classList.add(
-        "other-month"
-      );
-
-    }
-
-    else {
-
-      const number =
-        i -
-        firstDay +
-        1;
-
-
-      date =
-        new Date(
-          year,
-          month,
-          number
-        );
-
-    }
-
-
-    const number =
-      document.createElement("div");
-
-    number.className =
-      "day-number";
-
-    number.textContent =
-      date.getDate();
-
-
-    if (
-      date.getFullYear() ===
-        today.getFullYear() &&
-      date.getMonth() ===
-        today.getMonth() &&
-      date.getDate() ===
-        today.getDate()
-    ) {
-
-      day.classList.add(
-        "today"
-      );
-
-    }
-
-
-    day.appendChild(number);
-
-
-    const dateString =
-      date.toISOString()
-        .split("T")[0];
-
-
-    const daySessions =
-      sessions.filter(
-        session =>
-          session.session_date ===
-          dateString
-      );
-
-
-    daySessions.forEach(
-      session => {
-
-        const event =
-          document.createElement("div");
-
-        event.className =
-          "session-event";
-
-
-        event.innerHTML = `
-          <strong>🧘 Meditation</strong>
-          <span>
-            ${escapeHTML(
-              formatTime(
-                session.session_time
-              )
-            )}
-          </span>
-        `;
-
-
-        event.onclick =
-          () => {
-
-            alert(
-              "Meditation Session\n\n" +
-              formatTime(
-                session.session_time
-              ) +
-              "\n\n" +
-              session.location
-            );
-
-          };
-
-
-        day.appendChild(event);
-
-      }
-    );
-
-
-    calendarGrid.appendChild(day);
-
-  }
-
-}
-
-
-/* =========================================
-   RENDER SESSIONS
-========================================= */
-
-function renderSessions() {
-
-  if (!sessions.length) {
-
-    sessionList.innerHTML = `
-      <div class="session-card">
-        <h4>No meditation sessions yet.</h4>
-        <div class="session-info">
-          Sign in below to add the first session.
-        </div>
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  sessionList.innerHTML = "";
-
-
-  sessions.forEach(
-    session => {
-
-      const card =
-        document.createElement("div");
-
-      card.className =
-        "session-card";
-
-
-      const date =
-        new Date(
-          session.session_date +
-          "T12:00:00"
-        );
-
-
-      const formattedDate =
-        date.toLocaleDateString(
-          "en-US",
+      `;
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+        .from("meditation_sessions")
+        .select("*")
+        .order(
+          "session_date",
           {
-            weekday: "long",
-            month: "long",
-            day: "numeric",
-            year: "numeric"
+            ascending: true
           }
         );
 
 
-      const maps =
-        "https://www.google.com/maps/search/?api=1&query=" +
-        encodeURIComponent(
-          session.location
-        );
+    if (error) {
 
-
-      card.innerHTML = `
-
-        <div class="session-date">
-          ${escapeHTML(formattedDate)}
-        </div>
-
-        <h4>
-          Meditation Session
-        </h4>
-
-        <div class="session-info">
-
-          🕐
-          ${escapeHTML(
-            formatTime(
-              session.session_time
-            )
-          )}
-
-          <br>
-
-          📍
-          ${escapeHTML(
-            session.location
-          )}
-
-        </div>
-
-        <a
-          class="maps-button"
-          href="${maps}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get Directions
-        </a>
-
-      `;
-
-
-      sessionList.appendChild(
-        card
+      console.error(
+        "Database error:",
+        error
       );
 
-    }
-  );
 
-}
-
-
-/* =========================================
-   CHECK USER
-========================================= */
-
-async function checkUser() {
-
-  const {
-    data
-  } =
-    await supabaseClient
-      .auth
-      .getSession();
-
-
-  currentUser =
-    data.session?.user || null;
-
-
-  updateAuthUI();
-
-}
-
-
-/* =========================================
-   AUTH STATE
-========================================= */
-
-supabaseClient.auth.onAuthStateChange(
-  (_event, session) => {
-
-    currentUser =
-      session?.user || null;
-
-    updateAuthUI();
-
-  }
-);
-
-
-/* =========================================
-   AUTH UI
-========================================= */
-
-function updateAuthUI() {
-
-  if (currentUser) {
-
-    authStatus.textContent =
-      "Signed in as " +
-      currentUser.email;
-
-
-    loginArea.style.display =
-      "none";
-
-
-    loggedInArea.style.display =
-      "block";
-
-  }
-
-  else {
-
-    authStatus.textContent =
-      "You are not signed in.";
-
-
-    loginArea.style.display =
-      "block";
-
-
-    loggedInArea.style.display =
-      "none";
-
-
-    addSession.classList.remove(
-      "active"
-    );
-
-  }
-
-}
-
-
-/* =========================================
-   SIGN UP
-========================================= */
-
-document
-  .getElementById("signUp")
-  .onclick =
-  async () => {
-
-    const email =
-      document
-        .getElementById("email")
-        .value
-        .trim();
-
-
-    const password =
-      document
-        .getElementById("password")
-        .value;
-
-
-    if (!email || !password) {
-
-      showMessage(
-        "Please enter your email and password.",
-        "error"
-      );
+      container.innerHTML =
+        `
+          <div class="message">
+            Unable to load meditation sessions.
+            <br><br>
+            <small>
+              ${escapeHtml(error.message)}
+            </small>
+          </div>
+        `;
 
       return;
+    }
+
+
+    allSessions =
+      data || [];
+
+
+    /*
+      If database is empty,
+      show the next four Saturdays
+      so the calendar still looks good.
+    */
+
+    if (allSessions.length === 0) {
+
+      createEmptyDateCards();
+
+      container.innerHTML =
+        `
+          <div class="message">
+            No meditation sessions have been added yet.
+            <br>
+            Click "Add Session" to create the first one.
+          </div>
+        `;
+
+      return;
+    }
+
+
+    /*
+      Sort dates.
+    */
+
+    allSessions.sort(
+      (a,b) =>
+        new Date(a.session_date)
+        -
+        new Date(b.session_date)
+    );
+
+
+    /*
+      Select first date initially.
+    */
+
+    if (!selectedDate) {
+
+      selectedDate =
+        allSessions[0].session_date;
 
     }
 
 
-    const {
-      error
-    } =
-      await supabaseClient.auth.signUp({
+    renderDateCards();
 
-        email,
+    renderSelectedSession();
 
-        password,
+  }
 
-        options: {
 
-          emailRedirectTo:
-            "https://inugantisunitha-spec.github.io/Bhudda-Calendar-Website/"
+  /* ==================================================
+     DATE CARDS
+  ================================================== */
+
+  function renderDateCards() {
+
+    const row =
+      document.getElementById(
+        "dateRow"
+      );
+
+
+    /*
+      Show up to four dates.
+    */
+
+    let dates =
+      allSessions
+        .map(
+          session =>
+            session.session_date
+        )
+        .filter(
+          (date,index,array) =>
+            array.indexOf(date)
+            === index
+        )
+        .slice(0,4);
+
+
+    row.innerHTML = "";
+
+
+    dates.forEach(
+      (date,index) => {
+
+        const card =
+          document.createElement(
+            "button"
+          );
+
+
+        card.className =
+          "date-card";
+
+
+        if (
+          date === selectedDate
+        ) {
+
+          card.classList.add(
+            "active"
+          );
 
         }
 
-      });
+
+        const d =
+          parseLocalDate(date);
 
 
-    if (error) {
+        card.innerHTML =
+          `
+            <div class="date-day">
+              ${d.toLocaleDateString(
+                "en-US",
+                {
+                  weekday: "short"
+                }
+              )}
+            </div>
 
-      showMessage(
-        error.message,
-        "error"
+            <div class="date-number">
+              ${d.toLocaleDateString(
+                "en-US",
+                {
+                  month: "short",
+                  day: "numeric"
+                }
+              )}
+            </div>
+
+            <div class="date-year">
+              ${d.getFullYear()}
+            </div>
+          `;
+
+
+        card.onclick =
+          () => {
+
+            selectedDate =
+              date;
+
+            renderDateCards();
+
+            renderSelectedSession();
+
+          };
+
+
+        row.appendChild(card);
+
+      }
+    );
+
+  }
+
+
+  /* ==================================================
+     EMPTY DATE CARDS
+  ================================================== */
+
+  function createEmptyDateCards() {
+
+    const row =
+      document.getElementById(
+        "dateRow"
+      );
+
+
+    row.innerHTML = "";
+
+
+    const today =
+      new Date();
+
+
+    /*
+      Find next Saturday.
+    */
+
+    let day =
+      today.getDay();
+
+
+    let daysUntilSaturday =
+      (6 - day + 7) % 7;
+
+
+    if (daysUntilSaturday === 0) {
+
+      daysUntilSaturday = 7;
+
+    }
+
+
+    for (
+      let i = 0;
+      i < 4;
+      i++
+    ) {
+
+      const d =
+        new Date(today);
+
+
+      d.setDate(
+        today.getDate()
+        +
+        daysUntilSaturday
+        +
+        (i * 7)
+      );
+
+
+      const dateString =
+        formatDateForDatabase(d);
+
+
+      const card =
+        document.createElement(
+          "button"
+        );
+
+
+      card.className =
+        "date-card";
+
+
+      if (i === 0) {
+
+        card.classList.add(
+          "active"
+        );
+
+        selectedDate =
+          dateString;
+
+      }
+
+
+      card.innerHTML =
+        `
+          <div class="date-day">
+            ${d.toLocaleDateString(
+              "en-US",
+              {
+                weekday: "short"
+              }
+            )}
+          </div>
+
+          <div class="date-number">
+            ${d.toLocaleDateString(
+              "en-US",
+              {
+                month: "short",
+                day: "numeric"
+              }
+            )}
+          </div>
+
+          <div class="date-year">
+            ${d.getFullYear()}
+          </div>
+        `;
+
+
+      card.onclick =
+        () => {
+
+          selectedDate =
+            dateString;
+
+          renderDateCards();
+
+          renderSelectedSession();
+
+        };
+
+
+      row.appendChild(card);
+
+    }
+
+  }
+
+
+  /* ==================================================
+     SHOW SELECTED SESSION
+  ================================================== */
+
+  function renderSelectedSession() {
+
+    const container =
+      document.getElementById(
+        "sessionContainer"
+      );
+
+
+    const sessions =
+      allSessions.filter(
+        session =>
+          session.session_date
+          ===
+          selectedDate
+      );
+
+
+    if (
+      sessions.length === 0
+    ) {
+
+      container.innerHTML =
+        `
+          <div class="message">
+            No session has been added
+            for this date yet.
+          </div>
+        `;
+
+      return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    sessions.forEach(
+      (session,index) => {
+
+        const d =
+          parseLocalDate(
+            session.session_date
+          );
+
+
+        const card =
+          document.createElement(
+            "div"
+          );
+
+
+        card.className =
+          "session-card";
+
+
+        card.innerHTML =
+          `
+            <div class="session-heading">
+
+              <h3>
+                🗓️
+                ${d.toLocaleDateString(
+                  "en-US",
+                  {
+                    weekday: "long",
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric"
+                  }
+                )}
+              </h3>
+
+              <div class="week-badge">
+                Week ${index + 1}
+              </div>
+
+            </div>
+
+
+            <div class="session-row">
+
+              <div class="session-icon">
+                🕘
+              </div>
+
+              <div class="session-info">
+
+                <strong>
+                  Time
+                </strong>
+
+                <span>
+                  ${escapeHtml(
+                    session.session_time
+                  )}
+                </span>
+
+              </div>
+
+              <button
+                class="edit-button"
+                onclick="editTime(${session.id})"
+              >
+                ✎ Edit Time
+              </button>
+
+            </div>
+
+
+            <div class="session-row">
+
+              <div class="session-icon">
+                📍
+              </div>
+
+              <div class="session-info">
+
+                <strong>
+                  Location
+                </strong>
+
+                <span>
+                  ${escapeHtml(
+                    session.location
+                  )}
+                </span>
+
+                <br>
+
+                <a
+                  class="directions"
+                  href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(session.location)}"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  ➤ Get Directions
+                </a>
+
+              </div>
+
+              <button
+                class="edit-button"
+                onclick="editLocation(${session.id})"
+              >
+                ✎ Edit Location
+              </button>
+
+            </div>
+
+
+            <div class="session-note">
+
+              🌿
+              Let's meditate, breathe,
+              and bring more peace and positivity
+              into our lives.
+
+            </div>
+          `;
+
+
+        container.appendChild(card);
+
+      }
+    );
+
+  }
+
+
+  /* ==================================================
+     ADD SESSION
+  ================================================== */
+
+  function startAddSession() {
+
+    /*
+      If not signed in,
+      show login.
+    */
+
+    if (!currentSession) {
+
+      openAuth(
+        "Please sign in to add a meditation session."
       );
 
       return;
@@ -1700,117 +1934,52 @@ document
     }
 
 
-    showMessage(
-      "Account created. Please check your email to confirm your account.",
-      "success"
-    );
-
-  };
-
-
-/* =========================================
-   SIGN IN
-========================================= */
-
-document
-  .getElementById("signIn")
-  .onclick =
-  async () => {
-
-    const email =
-      document
-        .getElementById("email")
-        .value
-        .trim();
-
-
-    const password =
-      document
-        .getElementById("password")
-        .value;
-
-
-    const {
-      error
-    } =
-      await supabaseClient.auth.signInWithPassword({
-
-        email,
-
-        password
-
-      });
-
-
-    if (error) {
-
-      showMessage(
-        error.message,
-        "error"
+    const modal =
+      document.getElementById(
+        "addModal"
       );
 
-      return;
 
-    }
+    document.getElementById(
+      "addDate"
+    ).value =
+      selectedDate || "";
 
 
-    showMessage(
-      "Signed in successfully.",
-      "success"
+    document.getElementById(
+      "addTime"
+    ).value = "";
+
+
+    document.getElementById(
+      "addLocation"
+    ).value = "";
+
+
+    document.getElementById(
+      "addMessage"
+    ).textContent = "";
+
+
+    modal.classList.add(
+      "show"
     );
 
-  };
+  }
 
 
-/* =========================================
-   SIGN OUT
-========================================= */
+  /* ==================================================
+     SAVE NEW SESSION
+  ================================================== */
 
-document
-  .getElementById("signOut")
-  .onclick =
-  async () => {
+  async function saveNewSession() {
 
-    await supabaseClient.auth.signOut();
+    if (!currentSession) {
 
-    showMessage(
-      "Signed out.",
-      "success"
-    );
+      closeAddModal();
 
-  };
-
-
-/* =========================================
-   SHOW ADD FORM
-========================================= */
-
-document
-  .getElementById("showAdd")
-  .onclick =
-  () => {
-
-    addSession.classList.toggle(
-      "active"
-    );
-
-  };
-
-
-/* =========================================
-   SAVE SESSION
-========================================= */
-
-document
-  .getElementById("saveSession")
-  .onclick =
-  async () => {
-
-    if (!currentUser) {
-
-      showMessage(
-        "Please sign in first.",
-        "error"
+      openAuth(
+        "Please sign in first."
       );
 
       return;
@@ -1819,22 +1988,27 @@ document
 
 
     const date =
-      document
-        .getElementById("sessionDate")
-        .value;
+      document.getElementById(
+        "addDate"
+      ).value;
 
 
     const time =
-      document
-        .getElementById("sessionTime")
-        .value;
+      document.getElementById(
+        "addTime"
+      ).value.trim();
 
 
     const location =
-      document
-        .getElementById("sessionLocation")
-        .value
-        .trim();
+      document.getElementById(
+        "addLocation"
+      ).value.trim();
+
+
+    const message =
+      document.getElementById(
+        "addMessage"
+      );
 
 
     if (
@@ -1843,10 +2017,313 @@ document
       !location
     ) {
 
-      showMessage(
-        "Please enter the date, time, and location.",
-        "error"
+      message.textContent =
+        "Please enter date, time, and location.";
+
+      return;
+
+    }
+
+
+    message.textContent =
+      "Saving...";
+
+
+    const {
+      error
+    } =
+      await supabaseClient
+        .from("meditation_sessions")
+        .insert({
+          session_date: date,
+          session_time: time,
+          location: location
+        });
+
+
+    if (error) {
+
+      console.error(
+        "Insert error:",
+        error
       );
+
+
+      message.textContent =
+        "Could not save: "
+        +
+        error.message;
+
+      return;
+
+    }
+
+
+    closeAddModal();
+
+
+    selectedDate =
+      date;
+
+
+    await loadSessions();
+
+  }
+
+
+  /* ==================================================
+     EDIT TIME
+  ================================================== */
+
+  function editTime(id) {
+
+    openEditModal(
+      id,
+      "time"
+    );
+
+  }
+
+
+  /* ==================================================
+     EDIT LOCATION
+  ================================================== */
+
+  function editLocation(id) {
+
+    openEditModal(
+      id,
+      "location"
+    );
+
+  }
+
+
+  /* ==================================================
+     OPEN EDIT MODAL
+  ================================================== */
+
+  function openEditModal(
+    id,
+    type
+  ) {
+
+    if (!currentSession) {
+
+      openAuth(
+        "Please sign in to edit a meditation session."
+      );
+
+      return;
+
+    }
+
+
+    const session =
+      allSessions.find(
+        item =>
+          String(item.id)
+          ===
+          String(id)
+      );
+
+
+    if (!session) {
+
+      alert(
+        "Session not found."
+      );
+
+      return;
+
+    }
+
+
+    editingSessionId =
+      id;
+
+
+    document.getElementById(
+      "editDate"
+    ).value =
+      session.session_date;
+
+
+    document.getElementById(
+      "editTime"
+    ).value =
+      session.session_time;
+
+
+    document.getElementById(
+      "editLocation"
+    ).value =
+      session.location;
+
+
+    document.getElementById(
+      "editMessage"
+    ).textContent = "";
+
+
+    document.getElementById(
+      "editTitle"
+    ).textContent =
+      type === "time"
+      ? "Edit Time"
+      : "Edit Location";
+
+
+    document.getElementById(
+      "editModal"
+    ).classList.add(
+      "show"
+    );
+
+  }
+
+
+  /* ==================================================
+     SAVE EDIT
+  ================================================== */
+
+  async function saveEdit() {
+
+    if (!currentSession) {
+
+      closeEditModal();
+
+      openAuth(
+        "Please sign in first."
+      );
+
+      return;
+
+    }
+
+
+    if (!editingSessionId) {
+
+      return;
+
+    }
+
+
+    const date =
+      document.getElementById(
+        "editDate"
+      ).value;
+
+
+    const time =
+      document.getElementById(
+        "editTime"
+      ).value.trim();
+
+
+    const location =
+      document.getElementById(
+        "editLocation"
+      ).value.trim();
+
+
+    const message =
+      document.getElementById(
+        "editMessage"
+      );
+
+
+    if (
+      !date ||
+      !time ||
+      !location
+    ) {
+
+      message.textContent =
+        "Please complete all fields.";
+
+      return;
+
+    }
+
+
+    message.textContent =
+      "Saving...";
+
+
+    const {
+      error
+    } =
+      await supabaseClient
+        .from("meditation_sessions")
+        .update({
+          session_date: date,
+          session_time: time,
+          location: location
+        })
+        .eq(
+          "id",
+          editingSessionId
+        );
+
+
+    if (error) {
+
+      console.error(
+        "Update error:",
+        error
+      );
+
+
+      message.textContent =
+        "Could not save: "
+        +
+        error.message;
+
+      return;
+
+    }
+
+
+    selectedDate =
+      date;
+
+
+    closeEditModal();
+
+
+    await loadSessions();
+
+  }
+
+
+  /* ==================================================
+     DELETE SESSION
+  ================================================== */
+
+  async function deleteSession() {
+
+    if (!currentSession) {
+
+      return;
+
+    }
+
+
+    if (!editingSessionId) {
+
+      return;
+
+    }
+
+
+    const confirmed =
+      confirm(
+        "Delete this meditation session?"
+      );
+
+
+    if (!confirmed) {
 
       return;
 
@@ -1858,24 +2335,19 @@ document
     } =
       await supabaseClient
         .from("meditation_sessions")
-        .insert({
-
-          session_date: date,
-
-          session_time: time,
-
-          location: location
-
-        });
+        .delete()
+        .eq(
+          "id",
+          editingSessionId
+        );
 
 
     if (error) {
 
-      console.error(error);
-
-      showMessage(
-        error.message,
-        "error"
+      alert(
+        "Could not delete: "
+        +
+        error.message
       );
 
       return;
@@ -1883,151 +2355,447 @@ document
     }
 
 
-    document
-      .getElementById("sessionDate")
-      .value = "";
-
-
-    document
-      .getElementById("sessionTime")
-      .value = "";
-
-
-    document
-      .getElementById("sessionLocation")
-      .value = "";
-
-
-    addSession.classList.remove(
-      "active"
-    );
+    closeEditModal();
 
 
     await loadSessions();
 
+  }
 
-    showMessage(
-      "Meditation session added successfully!",
-      "success"
+
+  /* ==================================================
+     AUTH
+  ================================================== */
+
+  function openAuth(message) {
+
+    authMode =
+      "signin";
+
+
+    document.getElementById(
+      "authTitle"
+    ).textContent =
+      "Sign In";
+
+
+    document.getElementById(
+      "authDescription"
+    ).textContent =
+      message ||
+      "Sign in to add or edit a meditation session.";
+
+
+    document.getElementById(
+      "authButton"
+    ).textContent =
+      "Sign In";
+
+
+    document.getElementById(
+      "switchAuthButton"
+    ).textContent =
+      "Create a new account";
+
+
+    document.getElementById(
+      "authMessage"
+    ).textContent = "";
+
+
+    document.getElementById(
+      "authModal"
+    ).classList.add(
+      "show"
     );
 
-  };
+  }
 
 
-/* =========================================
-   MONTH NAVIGATION
-========================================= */
+  function closeAuth() {
 
-document
-  .getElementById("previousMonth")
-  .onclick =
-  () => {
-
-    calendarDate.setMonth(
-      calendarDate.getMonth() - 1
+    document.getElementById(
+      "authModal"
+    ).classList.remove(
+      "show"
     );
 
-    renderCalendar();
-
-  };
+  }
 
 
-document
-  .getElementById("nextMonth")
-  .onclick =
-  () => {
+  function switchAuthMode() {
 
-    calendarDate.setMonth(
-      calendarDate.getMonth() + 1
-    );
+    if (
+      authMode === "signin"
+    ) {
 
-    renderCalendar();
-
-  };
+      authMode =
+        "signup";
 
 
-/* =========================================
-   TIME
-========================================= */
-
-function formatTime(time) {
-
-  if (!time) return "";
-
-  const parts =
-    time.split(":");
-
-  const hour =
-    Number(parts[0]);
-
-  const minute =
-    parts[1];
-
-  const suffix =
-    hour >= 12
-      ? "PM"
-      : "AM";
-
-  const displayHour =
-    hour % 12 || 12;
-
-  return (
-    displayHour +
-    ":" +
-    minute +
-    " " +
-    suffix
-  );
-
-}
+      document.getElementById(
+        "authTitle"
+      ).textContent =
+        "Create Account";
 
 
-/* =========================================
-   SECURITY
-========================================= */
-
-function escapeHTML(value) {
-
-  return String(value ?? "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-
-}
+      document.getElementById(
+        "authDescription"
+      ).textContent =
+        "Create an account to add or edit meditation sessions.";
 
 
-/* =========================================
-   MESSAGE
-========================================= */
-
-function showMessage(
-  text,
-  type
-) {
-
-  message.textContent =
-    text;
-
-  message.className =
-    type;
+      document.getElementById(
+        "authButton"
+      ).textContent =
+        "Create Account";
 
 
-  setTimeout(
-    () => {
+      document.getElementById(
+        "switchAuthButton"
+      ).textContent =
+        "Already have an account? Sign in";
+
+    }
+
+    else {
+
+      authMode =
+        "signin";
+
+
+      document.getElementById(
+        "authTitle"
+      ).textContent =
+        "Sign In";
+
+
+      document.getElementById(
+        "authDescription"
+      ).textContent =
+        "Sign in to add or edit a meditation session.";
+
+
+      document.getElementById(
+        "authButton"
+      ).textContent =
+        "Sign In";
+
+
+      document.getElementById(
+        "switchAuthButton"
+      ).textContent =
+        "Create a new account";
+
+    }
+
+  }
+
+
+  async function submitAuth() {
+
+    const email =
+      document.getElementById(
+        "authEmail"
+      ).value.trim();
+
+
+    const password =
+      document.getElementById(
+        "authPassword"
+      ).value;
+
+
+    const message =
+      document.getElementById(
+        "authMessage"
+      );
+
+
+    if (
+      !email ||
+      !password
+    ) {
 
       message.textContent =
-        "";
+        "Please enter your email and password.";
 
-      message.className =
-        "";
+      return;
 
-    },
-    5000
-  );
+    }
 
-}
+
+    message.textContent =
+      "Please wait...";
+
+
+    /*
+      SIGN UP
+    */
+
+    if (
+      authMode === "signup"
+    ) {
+
+      const {
+        data,
+        error
+      } =
+        await supabaseClient.auth.signUp({
+
+          email: email,
+
+          password: password,
+
+          options: {
+
+            emailRedirectTo:
+              "https://inugantisunitha-spec.github.io/Bhudda-Calendar-Website/"
+
+          }
+
+        });
+
+
+      if (error) {
+
+        message.textContent =
+          error.message;
+
+        return;
+
+      }
+
+
+      if (
+        data.session
+      ) {
+
+        currentSession =
+          data.session;
+
+        closeAuth();
+
+      }
+
+      else {
+
+        message.textContent =
+          "Account created. Please check your email to confirm your account.";
+
+      }
+
+
+      return;
+
+    }
+
+
+    /*
+      SIGN IN
+    */
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient.auth.signInWithPassword({
+
+        email: email,
+
+        password: password
+
+      });
+
+
+    if (error) {
+
+      message.textContent =
+        error.message;
+
+      return;
+
+    }
+
+
+    currentSession =
+      data.session;
+
+
+    closeAuth();
+
+  }
+
+
+  /* ==================================================
+     CLOSE ADD
+  ================================================== */
+
+  function closeAddModal() {
+
+    document.getElementById(
+      "addModal"
+    ).classList.remove(
+      "show"
+    );
+
+  }
+
+
+  /* ==================================================
+     CLOSE EDIT
+  ================================================== */
+
+  function closeEditModal() {
+
+    document.getElementById(
+      "editModal"
+    ).classList.remove(
+      "show"
+    );
+
+
+    editingSessionId =
+      null;
+
+  }
+
+
+  /* ==================================================
+     DATE HELPERS
+  ================================================== */
+
+  function parseLocalDate(
+    dateString
+  ) {
+
+    const parts =
+      dateString.split("-");
+
+
+    return new Date(
+      Number(parts[0]),
+      Number(parts[1]) - 1,
+      Number(parts[2])
+    );
+
+  }
+
+
+  function formatDateForDatabase(
+    date
+  ) {
+
+    const year =
+      date.getFullYear();
+
+
+    const month =
+      String(
+        date.getMonth() + 1
+      ).padStart(2,"0");
+
+
+    const day =
+      String(
+        date.getDate()
+      ).padStart(2,"0");
+
+
+    return `${year}-${month}-${day}`;
+
+  }
+
+
+  /* ==================================================
+     SECURITY / TEXT
+  ================================================== */
+
+  function escapeHtml(
+    value
+  ) {
+
+    return String(value ?? "")
+      .replace(
+        /&/g,
+        "&amp;"
+      )
+      .replace(
+        /</g,
+        "&lt;"
+      )
+      .replace(
+        />/g,
+        "&gt;"
+      )
+      .replace(
+        /"/g,
+        "&quot;"
+      )
+      .replace(
+        /'/g,
+        "&#039;"
+      );
+
+  }
+
+
+  /* ==================================================
+     CLOSE MODALS WHEN CLICKING OUTSIDE
+  ================================================== */
+
+  document
+    .getElementById("authModal")
+    .addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === this
+        ) {
+
+          closeAuth();
+
+        }
+
+      }
+    );
+
+
+  document
+    .getElementById("editModal")
+    .addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === this
+        ) {
+
+          closeEditModal();
+
+        }
+
+      }
+    );
+
+
+  document
+    .getElementById("addModal")
+    .addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === this
+        ) {
+
+          closeAddModal();
+
+        }
+
+      }
+    );
 
 </script>
 
