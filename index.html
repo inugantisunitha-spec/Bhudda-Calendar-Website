@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meditation Session</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0f5c4d; --green2:#1f8a6b; --mint:#e6f4ee; --ink:#12433a; --muted:#4d6b63;
+  --card:rgba(255,255,255,.92);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Poppins',sans-serif;color:var(--ink);min-height:100vh;background:#bfe3f2;position:relative;overflow-x:hidden}
+/* ---------- generated background (SVG) ---------- */
+#bg{position:fixed;inset:0;z-index:-1;background:#bfe3f2 url('assets/bg.jpg') center/cover no-repeat}
+#bg svg{width:100%;height:100%;display:block}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 18px 60px}
+header{text-align:center;margin-bottom:18px}
+.lotus{width:92px;height:48px}
+h1{font-family:'Dancing Script',cursive;font-weight:700;font-size:clamp(44px,8vw,72px);margin:0;line-height:1.05;color:var(--green)}
+.tags{display:flex;justify-content:center;gap:10px;font-weight:500;flex-wrap:wrap}
+.tags i{color:var(--green2);font-style:normal}
+.hello{max-width:520px;background:rgba(255,255,255,.62);backdrop-filter:blur(6px);border-radius:28px;padding:22px 28px;margin:22px 0 28px;box-shadow:0 8px 30px rgba(0,60,60,.12)}
+.hello h2{font-family:'Dancing Script',cursive;font-size:32px;margin:0 0 6px}
+.hello p{margin:0 0 12px;line-height:1.5}
+.hello .love{font-family:'Dancing Script',cursive;font-size:30px;font-weight:700;margin:0;text-align:center}
+.panel{background:var(--card);border-radius:28px;padding:22px;box-shadow:0 12px 40px rgba(0,60,60,.18)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.top h3{font-family:'Dancing Script',cursive;font-size:36px;margin:0;line-height:1}
+.top small{color:var(--muted)}
+.badge{background:var(--mint);border:1px solid #cfe8dd;border-radius:16px;padding:8px 16px;font-size:13px}
+.badge b{display:block;font-weight:500;font-size:14px}
+.dates{display:flex;gap:14px;margin:18px 0;flex-wrap:wrap;align-items:stretch}
+.chip{flex:1 1 110px;min-width:100px;border:2px solid transparent;border-radius:20px;padding:12px 6px;text-align:center;cursor:pointer;font:inherit;color:var(--ink);transition:.15s}
+.chip:hover{transform:translateY(-2px)}
+.chip span{display:block;font-size:13px}.chip strong{display:block;font-size:22px;font-weight:500}
+.chip.c0{background:#d6efdf}.chip.c1{background:#dbeafb}.chip.c2{background:#e6e1f8}.chip.c3{background:#fbeccc}
+.chip.active{border-color:var(--green);box-shadow:0 0 0 2px #fff inset}
+.add{background:linear-gradient(135deg,var(--green2),var(--green));color:#fff;border:0;border-radius:14px;padding:0 22px;font:500 15px 'Poppins';cursor:pointer;min-height:48px;align-self:center}
+.detail{border:1px solid #d9ebe3;border-radius:22px;padding:18px 22px;background:#fdfffe}
+.dhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.dhead h4{margin:0;font-size:22px;font-weight:600}
+.week{background:#c6ecd2;border-radius:20px;padding:4px 14px;font-size:13px;font-weight:500}
+.row{display:flex;gap:16px;align-items:center;padding:14px 0;border-top:1px solid #e3efe9}
+.ico{width:48px;height:48px;border-radius:50%;background:var(--mint);display:grid;place-items:center;flex:none;font-size:22px}
+.row .info{flex:1}.row b{display:block;font-size:17px}
+.btn{background:var(--mint);border:1px solid #cfe8dd;color:var(--ink);border-radius:12px;padding:9px 16px;font:500 14px 'Poppins';cursor:pointer;text-decoration:none;display:inline-block}
+.dir{display:block;margin-top:8px;color:var(--green2);font-size:14px;text-align:right}
+.quote{background:var(--mint);border-radius:16px;padding:14px 18px;font-style:italic;font-size:14px;color:var(--muted);margin-top:6px}
+.form{margin-top:18px;background:var(--mint);border-radius:22px;padding:18px 22px}
+.form h4{margin:0 0 12px;font-size:17px;font-weight:500}
+.fields{display:grid;grid-template-columns:1fr 1fr 1.4fr 1fr;gap:16px}
+label{font-size:13px;display:block;margin-bottom:4px}
+input,select{width:100%;padding:11px 12px;border:1px solid #cfe0d8;border-radius:12px;font:14px 'Poppins';background:#fff;color:var(--ink)}
+.save{margin-top:14px;text-align:right}
+.save .add{padding:12px 32px}
+.status{font-size:13px;color:var(--muted);margin-top:8px;min-height:18px}
+footer{text-align:center;font-family:'Dancing Script',cursive;font-size:24px;margin-top:34px;color:var(--ink);text-shadow:0 1px 8px #fff}
+@media(min-width:900px){header{text-align:left;max-width:540px}.tags{justify-content:flex-start}.hello{margin-left:0}}
+@media(max-width:700px){.fields{grid-template-columns:1fr}.row{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div id="bg">
+<svg viewBox="0 0 1000 1500" preserveAspectRatio="xMaxYMin slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6fb4e6"/><stop offset=".25" stop-color="#cfe6f4"/>
+      <stop offset=".38" stop-color="#ffe6a8"/><stop offset=".48" stop-color="#ffc977"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6c98a"/><stop offset=".25" stop-color="#7ec9d0"/>
+      <stop offset=".7" stop-color="#3fb0c0"/><stop offset="1" stop-color="#bfe6ee"/>
+    </linearGradient>
+    <radialGradient id="sun"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#fff2b0"/><stop offset="1" stop-color="#ffd36600"/></radialGradient>
+    <g id="petals">
+      <path d="M0 0C-14-22-10-48 0-66C10-48 14-22 0 0Z" fill="#fbd0e3"/>
+      <path d="M0 0C-30-12-50-34-58-52C-34-48-12-30 0 0Z" fill="#f4a9cb"/>
+      <path d="M0 0C30-12 50-34 58-52C34-48 12-30 0 0Z" fill="#f4a9cb"/>
+      <path d="M0 0C-44 2-72-6-86-22C-56-30-22-20 0 0Z" fill="#ee86b4"/>
+      <path d="M0 0C44 2 72-6 86-22C56-30 22-20 0 0Z" fill="#ee86b4"/>
+      <ellipse cx="0" cy="-6" rx="9" ry="6" fill="#ffd44d"/>
+    </g>
+    <g id="leaf"><path d="M0 0C30-30 80-30 110 0C80 30 30 30 0 0Z" fill="#2f8f4b"/><path d="M0 0H100" stroke="#1d6b36" stroke-width="2"/></g>
+  </defs>
+  <rect width="1000" height="1500" fill="url(#sky)"/>
+  <g fill="#fff" opacity=".85">
+    <ellipse cx="200" cy="90" rx="150" ry="28"/><ellipse cx="620" cy="60" rx="170" ry="24"/>
+    <ellipse cx="380" cy="190" rx="120" ry="18"/><ellipse cx="820" cy="170" rx="110" ry="18"/>
+  </g>
+  <circle cx="640" cy="420" r="150" fill="url(#sun)"/><circle cx="640" cy="420" r="26" fill="#fffbe0"/>
+  <path d="M0 440 L120 380 L200 430 L260 390 L340 440Z" fill="#7aa8a0" opacity=".6"/>
+  <path d="M780 460 C830 380 900 330 1000 300 V470Z" fill="#3b7a4a"/>
+  <path d="M0 470 C60 420 120 400 170 440 L240 470Z" fill="#3b7a4a"/>
+  <rect y="450" width="1000" height="1050" fill="url(#sea)"/>
+  <g stroke="#fff" stroke-width="3" opacity=".5" fill="none">
+    <path d="M60 520q40-10 80 0M300 560q50-12 100 0M700 540q50-10 90 0M520 620q60-12 120 0"/>
+    <path d="M100 900q60-12 120 0M600 980q70-12 140 0M300 1100q60-12 120 0M740 1160q60-12 120 0"/>
+  </g>
+  <!-- rock + statue silhouette -->
+  <path d="M600 560 C640 520 780 500 900 530 C940 545 940 570 900 580 L620 585Z" fill="#6f6a60"/>
+  <g transform="translate(780 500) scale(1.45) translate(-780 -500)">
+  <g fill="#8d8b7d">
+    <ellipse cx="780" cy="484" rx="130" ry="30"/>
+    <path d="M690 484 C690 420 700 360 730 320 L830 320 C860 360 870 420 870 484Z"/>
+    <path d="M730 320 C700 340 690 380 700 440 L735 440 C730 400 735 360 750 330Z" fill="#7d7b6e"/>
+    <rect x="762" y="270" width="36" height="55"/>
+    <ellipse cx="780" cy="248" rx="34" ry="42"/>
+    <circle cx="780" cy="204" r="30" fill="#7d7b6e"/><circle cx="780" cy="176" r="10" fill="#7d7b6e"/>
+    <ellipse cx="780" cy="450" rx="48" ry="18" fill="#7d7b6e"/>
+  </g></g>
+  <!-- foreground foliage -->
+  <g><use href="#leaf" transform="translate(-20 20) rotate(40) scale(1.2)"/><use href="#leaf" transform="translate(40 -10) rotate(70) scale(1)"/>
+     <use href="#leaf" transform="translate(1020 10) rotate(140) scale(1.3)"/><use href="#leaf" transform="translate(960 40) rotate(110)"/></g>
+  <g><use href="#leaf" transform="translate(-30 1380) rotate(-30) scale(1.6)"/><use href="#leaf" transform="translate(1030 1400) rotate(210) scale(1.6)"/>
+     <use href="#leaf" transform="translate(100 1470) rotate(-10) scale(1.3)"/><use href="#leaf" transform="translate(900 1480) rotate(190) scale(1.2)"/></g>
+  <use href="#petals" transform="translate(130 530) scale(.9)"/>
+  <use href="#petals" transform="translate(930 520) scale(1)"/>
+  <use href="#petals" transform="translate(140 1420) scale(1.5)"/>
+  <use href="#petals" transform="translate(880 1440) scale(1.6)"/>
+</svg>
+</div>
+
+<div class="wrap">
+  <header>
+    <svg class="lotus" viewBox="0 0 90 48" fill="none" stroke="#1f8a6b" stroke-width="2.5"><path d="M45 4C34 16 34 32 45 44C56 32 56 16 45 4Z"/><path d="M45 44C28 40 16 28 14 14C30 16 40 26 45 44Z"/><path d="M45 44C62 40 74 28 76 14C60 16 50 26 45 44Z"/><path d="M45 44C24 46 8 40 2 28C18 26 34 32 45 44Z"/><path d="M45 44C66 46 82 40 88 28C72 26 56 32 45 44Z"/></svg>
+    <h1>Meditation Session</h1>
+    <div class="tags"><span>Peace</span><i>♥</i><span>Balance</span><i>♥</i><span>Positive Energy</span></div>
+  </header>
+
+  <section class="hello">
+    <h2>Hi Master, have a wonderful day! 🙏</h2>
+    <p>Please come and join our Meditation Session, where we can gather positive energy, inner strength, and a peaceful mind. 🧘‍♀️✨</p>
+    <p>Let's take some time to relax, meditate, and recharge ourselves with peace and positivity.</p>
+    <p class="love">We would love to have you join us!</p>
+  </section>
+
+  <section class="panel">
+    <div class="top">
+      <div><h3>📅 Meditation Calendar</h3><small>Click on a date to view details, add or edit location &amp; time.</small></div>
+      <div class="badge">👥 Community Calendar<b style="font-size:12px;color:var(--muted)">(Everyone can add / edit)</b></div>
+    </div>
+
+    <div class="dates" id="dates"></div>
+
+    <div class="detail">
+      <div class="dhead"><h4 id="dTitle"></h4><span class="week" id="dWeek"></span></div>
+      <div class="row"><div class="ico">🕖</div><div class="info"><b>Time</b><span id="dTime"></span></div><button class="btn" id="editTime">✎ Edit Time</button></div>
+      <div class="row"><div class="ico">📍</div><div class="info"><b>Location</b><span id="dLoc"></span></div>
+        <div><button class="btn" id="editLoc">✎ Edit Location</button><a class="dir" id="dir" target="_blank" rel="noopener">➤ Get Directions</a></div></div>
+      <div class="row"><div class="ico">🙏</div><div class="info"><b>Scheduled by</b><span id="dBy"></span></div></div>
+      <div class="quote">🌿 Let's meditate, breathe, and bring more peace and positivity into our lives.</div>
+    </div>
+
+    <form class="form" id="form">
+      <h4>👥 Add / Edit Location &amp; Time</h4>
+      <div class="fields">
+        <div><label for="fDate">Date</label><input type="date" id="fDate" required></div>
+        <div><label for="fTime">Time</label><select id="fTime"></select></div>
+        <div><label for="fLoc">Location</label><input id="fLoc" placeholder="Enter location/address"></div>
+      <div><label for="fBy">Your name</label><input id="fBy" placeholder="Who is scheduling?" required></div>
+      </div>
+      <div class="save"><button class="add" type="submit">💾 Save</button></div>
+      <div class="status" id="status"></div>
+    </form>
+  </section>
+
+  <footer>Together we meditate<br>for a healthier mind, a happier heart,<br>and a brighter tomorrow. 🪷</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* ===== Supabase config — paste your project values (see README.md) ===== */
+const SUPABASE_URL = "https://lhdkhhvegkmyuxfbjcjt.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_Wv5DL38hnKV342zdLtXLmA_67W5_lV4";  // public publishable key
+/* ====================================================================== */
+
+const DEFAULT_TIME = "7:00 PM – 8:00 PM";
+const sb = (SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase)
+  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+
+let sessions = {};   // iso date -> {session_date, session_time, location}
+let selected = null;
+
+const $ = id => document.getElementById(id);
+const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const fmtLong = s => parse(s).toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+
+// use assets/bg.jpg instead of the SVG background when present
+{ const im = new Image(); im.onload = () => { document.querySelector('#bg svg').style.display = 'none'; }; im.src = 'assets/bg.jpg'; }
+
+// time dropdown (every 30 min) holding 1-hour slots
+const times = [];
+for (let h = 0; h < 48; h++) {
+  const f = n => { const t=(n%48)/2, hr=Math.floor(t), m=t%1?'30':'00', ap=hr%24<12?'AM':'PM'; return `${(hr%12)||12}:${m} ${ap}`; };
+  times.push(`${f(h)} – ${f(h+2)}`);
+}
+$('fTime').innerHTML = times.map(t => `<option>${t}</option>`).join('');
+if (!times.includes(DEFAULT_TIME)) $('fTime').insertAdjacentHTML('afterbegin', `<option>${DEFAULT_TIME}</option>`);
+
+// ---------- data layer ----------
+async function load() {
+  if (sb) {
+    const { data, error } = await sb.from('meditation_sessions').select('*').order('session_date').order('id');
+    if (error) { setStatus('Could not load calendar: ' + error.message); return; }
+    sessions = Object.fromEntries(data.map(r => [r.session_date, r]));
+  } else {
+    try { sessions = JSON.parse(localStorage.getItem('med_sessions') || '{}'); } catch { sessions = {}; }
+  }
+}
+async function save(row) {
+  const prev = sessions[row.session_date];
+  if (sb) {
+    const q = prev && prev.id
+      ? sb.from('meditation_sessions').update({ ...row, updated_at: new Date().toISOString() }).eq('id', prev.id).select().single()
+      : sb.from('meditation_sessions').insert(row).select().single();
+    const { data, error } = await q;
+    if (error) throw error;
+    sessions[row.session_date] = data;
+    return;
+  }
+  sessions[row.session_date] = row;
+  localStorage.setItem('med_sessions', JSON.stringify(sessions));
+}
+function setStatus(t){ $('status').textContent = t; }
+
+// ---------- render ----------
+function nextSaturdays(n) {
+  const d = new Date(); d.setHours(0,0,0,0);
+  d.setDate(d.getDate() + ((6 - d.getDay() + 7) % 7));
+  return Array.from({length:n}, (_,i) => { const x = new Date(d); x.setDate(d.getDate()+7*i); return iso(x); });
+}
+function dateList() {
+  const set = new Set([...nextSaturdays(4), ...Object.keys(sessions).filter(k => k >= iso(new Date()))]);
+  return [...set].sort().slice(0, 8);
+}
+function renderDates() {
+  $('dates').innerHTML = dateList().map((s,i) => {
+    const d = parse(s);
+    return `<button class="chip c${i%4} ${s===selected?'active':''}" data-d="${s}">
+      <span>${d.toLocaleDateString('en-US',{weekday:'short'})}</span>
+      <strong>${d.toLocaleDateString('en-US',{month:'short',day:'numeric'})}</strong>
+      <span>${d.getFullYear()}</span></button>`;
+  }).join('') + `<button class="add" id="addBtn">＋ Add Session</button>`;
+  $('addBtn').onclick = () => { $('fDate').focus(); $('form').scrollIntoView({behavior:'smooth',block:'center'}); };
+  document.querySelectorAll('.chip').forEach(c => c.onclick = () => select(c.dataset.d));
+}
+function savedName() { try { return localStorage.getItem('med_name') || ''; } catch { return ''; } }
+function select(s) {
+  selected = s;
+  const r = sessions[s] || {};
+  $('dTitle').textContent = fmtLong(s);
+  $('dWeek').textContent = 'Week ' + (dateList().indexOf(s) + 1 || 1);
+  $('dTime').textContent = r.session_time || DEFAULT_TIME;
+  $('dLoc').textContent = r.location || 'Location to be announced — tap Edit Location to add one';
+  const dir = $('dir');
+  dir.style.display = r.location ? 'block' : 'none';
+  dir.href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(r.location || '');
+  $('dBy').textContent = r.scheduled_by || '—';
+  $('fBy').value = r.scheduled_by || savedName();
+  $('fDate').value = s;
+  $('fTime').value = r.session_time || DEFAULT_TIME;
+  $('fLoc').value = r.location || '';
+  renderDates();
+}
+
+$('fDate').onchange = e => { const r = sessions[e.target.value]; if (r) { $('fTime').value = r.session_time; $('fLoc').value = r.location || ''; } };
+$('editTime').onclick = () => $('fTime').focus();
+$('editLoc').onclick = () => $('fLoc').focus();
+$('form').onsubmit = async e => {
+  e.preventDefault();
+  const row = { session_date: $('fDate').value, session_time: $('fTime').value, location: $('fLoc').value.trim(), scheduled_by: $('fBy').value.trim() };
+  try { localStorage.setItem('med_name', row.scheduled_by); } catch {}
+  try { await save(row); setStatus('Saved ✓'); select(row.session_date); }
+  catch (err) { setStatus('Save failed: ' + err.message); }
+};
+
+(async () => {
+  await load();
+  select(dateList()[0]);
+  if (!sb) setStatus('Demo mode: changes are saved only in this browser. Add Supabase keys to share the calendar with everyone.');
+  if (sb) sb.channel('med').on('postgres_changes', {event:'*', schema:'public', table:'meditation_sessions'}, async () => { await load(); select(selected); }).subscribe();
+})();
+</script>
+</body>
+</html>
